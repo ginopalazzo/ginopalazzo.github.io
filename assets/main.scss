@@ -1,0 +1,51 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough) 
+---
+@import "minima";
+
+
+.social-icon {
+  margin-left: 0.6em;
+  color: #4D4D4D;
+}
+.social-icon:hover {
+    color: black
+}
+
+body {
+    font-family: 'Roboto Light',sans-serif;
+    font-weight: 300;
+    background-color: white;
+}
+
+a {
+    color: #2e6da4;
+}
+a:hover {
+    color: rgba(46, 109, 164, 0.78);
+    text-decoration: none;
+}
+
+.jumbotron {
+    margin-bottom: 0;
+    border-top: .05rem  solid #2e6da4;
+}
+
+.badge-rent {
+    background-color: rgba(46, 109, 164, 0.78);
+    color: white;
+}
+.navbar {
+    margin-bottom: 40px;
+    background-color: #f8f8f8;
+    border-top: .05rem solid #e7e7e7;
+    border-bottom: .05rem solid #e7e7e7;
+}
+
+.blog-footer {
+    padding: 2.5rem 0;
+    color: #999;
+    text-align: center;
+    background-color: #f8f8f8;
+    border-top: .05rem solid #e7e7e7;
+}
