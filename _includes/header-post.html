@@ -1,0 +1,9 @@
+<header class="jumbotron text-center">
+    <h1 class="display-4 font-weight-normal"> {{ page.title | escape }} </h1>
+      <p class="font-weight-light"> {{ page.description | escape }} </p>
+        <time class="mb-1 text-muted" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {% assign date_format = site.minima.date_format | default: "%b %Y " %}
+          {{ page.date | date: date_format }}
+        </time>
+      </p>
+</header>
