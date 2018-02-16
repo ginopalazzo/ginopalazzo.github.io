@@ -35,7 +35,7 @@ layout: default
             <p class="card-text mb-auto">{{ post.description | escape }}</p>
             <a href="{{ post.url | relative_url }}">Continue reading</a>
           </div>
-          <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="assets/{{post.slug}}/thumbnail.png" data-holder-rendered="true">
+          <img class="card-img-right flex-auto d-none d-md-block" data-src="holder.js/200x250?theme=thumb" alt="Thumbnail [200x250]" style="width: 200px; height: 250px;" src="assets/posts/{{post.slug}}/thumbnail.png" data-holder-rendered="true">
         </div>
       </div>
     {% endfor %}

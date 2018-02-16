@@ -10,7 +10,7 @@ It's hard to find well formed data about the Real Estate market in Spain. Usuall
 
 The city of Madrid, for example, is a municipality.
 
-No data of garages. No real estate data prices of districts or neighborhood of Madrid
+No data of garages. No real estate data prices of districts or neighborhood of Madrid found.
 
 [idealista.com][idealista] is the leader of the real estate online marketplace in Spain (aslo in Portugal and Italy I think). They offer [some data][idealista-prices] and an [API][idealista-api].
 
@@ -18,16 +18,16 @@ Poor information.
 
 I decided to take a snapshot of Idealista garage market for a random day in february. I use Scrapy (for scraping) and Django (for handy queries) python frameworks. I wrote a small note about using [Django][django] + [Scrapy][scrapy]. Also I used pandas library to clean the data in a DataFrame format, grouping by Municipality, district and neighborhood code to calculate the median. Also add the official geocode for each neighborhood.
 
-Yo can download the csv from:
-[rent-garage-madrid-feb.csv]({{"/assets/madrid-neighborhood-monthly-parking/rent-garage-madrid-feb.csv" | absolute_url}})
+You can download the csv from:
+[rent-garage-madrid-feb.csv]({{"/assets/posts/madrid-neighborhood-monthly-parking/rent-garage-madrid-feb.csv" | absolute_url}})
 
 ## Visualization 
- 
-<a href="https://github.com/martgnz/madrid-atlas">https://github.com/martgnz/madrid-atlas</a>
 
-![Garage prices in Madrid]({{"/assets/madrid-neighborhood-monthly-parking/madrid-realestate-garage.png" | absolute_url}})
+This is the result:
 
-more
+![Garage prices in Madrid]({{"/assets/posts/madrid-neighborhood-monthly-parking/madrid-realestate-garage.png" | absolute_url}})
+
+I found a really nice and well mantained [TopoJSON of Madrid][martgnz-madrid] with the neighborhoods and districts borders made by [martgnz][martgnz].
 
 ## Conclusions 
 
@@ -38,6 +38,6 @@ more
 [idealista]: https://idealista.com 
 [idealista-prices]: https://www.idealista.com/informes-precio-vivienda
 [idealista-api]: http://developers.idealista.com/access-request
-[jekyll-docs]: https://jekyllrb.com/docs/home
-[jekyll-gh]:   https://github.com/jekyll/jekyll
+[martgnz-madrid]: https://github.com/martgnz/madrid-atlas
+[martgnz]: https://github.com/martgnz/
 [jekyll-talk]: https://talk.jekyllrb.com/
