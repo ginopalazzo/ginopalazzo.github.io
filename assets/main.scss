@@ -77,11 +77,19 @@ a:hover {
     background-color: rgba(46, 109, 164, 0.78);
     color: white;
 }
-.navbar {
+.navbarra {
     margin-bottom: 40px;
     background-color: #f8f8f8;
     border-top: .05rem solid #e7e7e7;
     border-bottom: .05rem solid #e7e7e7;
+}
+
+.blog-header-logo {
+    font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+    font-size: 1.50rem;
+}
+.gines {
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
 }
 
 .blog-footer {
