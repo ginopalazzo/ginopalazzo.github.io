@@ -14,9 +14,10 @@ No data of garages. No real estate data prices of districts or neighborhood of M
 
 [idealista.com][idealista] is the leader of the real estate online marketplace in Spain (aslo in Portugal and Italy I think). They offer [some data][idealista-prices] and an [API][idealista-api].
 
-Poor information.
+Poor information.   
 
 I decided to take a snapshot of Idealista garage market for a random day in february. I use Scrapy (for scraping) and Django (for handy queries) python frameworks. I wrote a small note about using [Django][django] + [Scrapy][scrapy]. Also I used pandas library to clean the data in a DataFrame format, grouping by Municipality, district and neighborhood code to calculate the median. Also add the official geocode for each neighborhood.
+{: .col-lg-7 .col-xl-7}
 
 You can download the csv from:
 [rent-garage-madrid-feb.csv]({{"/assets/posts/madrid-neighborhood-monthly-parking/rent-garage-madrid-feb.csv" | absolute_url}})
@@ -25,7 +26,9 @@ You can download the csv from:
 
 This is the result:
 
-![Garage prices in Madrid]({{"/assets/posts/madrid-neighborhood-monthly-parking/madrid-realestate-garage.png" | absolute_url}})
+<div class="full">
+    <img class="img-fluid mx-auto d-block" src="/assets/posts/madrid-neighborhood-monthly-parking/madrid-realestate-garage.png">
+</div>
 
 I found a really nice and well mantained [TopoJSON of Madrid][martgnz-madrid] with the neighborhoods and districts borders made by [martgnz][martgnz].
 
