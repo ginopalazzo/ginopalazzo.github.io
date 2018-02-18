@@ -27,7 +27,7 @@ You can download the csv from:
 This is the result:
 
 <div class="full">
-    <img class="img-fluid mx-auto d-block" src="/assets/posts/madrid-neighborhood-monthly-parking/madrid-realestate-garage.png">
+    <img class="img-fluid" src="/assets/posts/madrid-neighborhood-monthly-parking/madrid-realestate-garage.png">
 </div>
 
 I found a really nice and well mantained [TopoJSON of Madrid][martgnz-madrid] with the neighborhoods and districts borders made by [martgnz][martgnz].
