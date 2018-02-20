@@ -58,7 +58,7 @@ This is the output:
 **¿How?**
 
 The field geocode is the string join of the code of the district and the neighborhood. This is how is represented each neighborhood in:
-* [Spanish National Stadistic](http://www.ine.es/)
+* [Spanish National Stadistical Institute](http://www.ine.es/)
 * [Madrid CityHall Open Data](https://datos.madrid.es/)
 
 And I found a really nice and well mantained [TopoJSON of Madrid][martgnz-madrid] with the neighborhoods and districts borders made by [martgnz][martgnz].

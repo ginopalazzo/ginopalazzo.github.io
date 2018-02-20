@@ -7,21 +7,33 @@ categories: ["Data", "Visualization", "Python", "d3.js"]
 ---
 ## Overview
 
-hello!
+Spanish real estate market can be intense:
+* Wages are one of the lowest in the E.U. (most common annualy salary, stadistical mode, is 16.490€. Arround 1100€ per month after taxes)
+* High rate of unemployment.
+* The job places are concentrate in the big cities.
+* Incredible rise of the house rent prices in cities like Madrid and Barcelona.
+
+<div class="full">
+    <img class="img-fluid" src="/assets/posts/{{page.slug}}/barcelona-room-rent.png">
+</div>
+
+With this situation, room sharing is becoming the only choice for many workers that wanted to live close to their job place.
+
+Lets try to explore a little deeper what is happening in the Spanish room rental market with the next interactive map.
+
 <iframe id="js-iframe" class="container-fluid" sandbox="allow-popups allow-scripts allow-forms allow-same-origin" src="/assets/posts/spanish-median-rental-room-prices/playground.html" marginwidth="0" marginheight="0" style="height:650px; border:none;width: 990px; display: block; margin: 0px auto; " scrolling="no"></iframe>
+
+Yo can explore the map in a separate page to see a [cleaner source code](/assets/posts/spanish-median-rental-room-prices/playground.html)
+
+Read futher for understanding the data and visualization behind it.
 ## Data
-It's hard to find well formed data about the Real Estate market in Spain. Usually the data prices are only for houses (not parkings, offices or lands) and the minimun territorial entity that holds the property is the municipality.
+There is a mayor digital player in the Spanish room sharing advertising marke, [idealista.com](https://www.idealista.com), and lots of secundary players like [Badi](https://badiapp.com/), [milanuncios](https://www.milanuncios.com/pisos-compartidos/), [spotahome](https://www.spotahome.com/es/alquiler/madrid/habitaciones-amuebladas)...
 
-The city of Madrid, for example, is a municipality.
+I've extracted the data from idealista because I've already made a scrapper for this webpage (I'll upload it to github when I clean it a little ;)).
 
-No data of garages. No real estate data prices of districts or neighborhood of Madrid found.
+I took a snapshot of Idealista room renting market for Spain in random day in february. I use, like I have done in [Madrid Neighborhood monthly parking]({{ site.baseurl }}{% post_url 2018-02-02-madrid-neighborhood-monthly-parking %}) post, [Scrapy (for scraping) and Django (for handy queries) python frameworks]({{ site.baseurl }}{% post_url 2017-12-01-django-scrapy %}).
 
-[idealista.com][idealista] is the leader of the real estate online marketplace in Spain (aslo in Portugal and Italy I think). They offer [some data][idealista-prices] and an [API][idealista-api].
-
-Poor information.
-
-I decided to take a snapshot of Idealista garage market for a random day in february. I use Scrapy (for scraping) and Django (for handy queries) python frameworks. I wrote a small note about using [Django][django] + [Scrapy][scrapy]. Also I used pandas library to clean the data in a DataFrame format, grouping by Municipality, district and neighborhood code to calculate the median. Also add the official geocode for each neighborhood.
-
+I used pandas library to clean the data in a DataFrame format, grouping by province and municipality  code to calculate the median. Also add the official geocode `m_code` for each municipality so it could be compatible with the [Spanish National Stadistical Institute (INE)](http://www.ine.es/) municipality code: `m_code = int(province) + munic`
 
 {% highlight csv %}
 # Panda DataFrame groupping by administrative boundaries
@@ -47,25 +59,7 @@ ES       01        01    001   059    1059     287.5
                          007   026    3026     200.0
                                030    3030     250.0
                                110    3110     275.0
-                         009   095    3095     200.0
-                         010   041    3041     350.0
-                         012   071    3071     190.0
-                   02    001   098    3098     180.0
-                               127    3127     400.0
-                         002   018    3018     250.0
-                         003   031    3031     300.0
-                         004   069    3069     250.0
-                         005   139    3139     225.0
                                                ...  
-         48        02    004   089    48089    340.0
-                         005   038    48038    310.0
-                               064    48064    300.0
-                               069    48069    300.0
-                   03    001   017    48017    250.0
-                         003   046    48046    200.0
-                   04    001   915    48915    250.0
-                   05    001   003    48003    300.0
-                         002   027    48027    240.0
                          003   032    48032    250.0
                          004   095    48095    315.0
                    06    001   065    48065    230.0
@@ -92,16 +86,25 @@ ES       01        01    001   059    1059     287.5
 You can download the csv from:
 [spain_muni_median_rent_room.csv]({{"/assets/posts/spanish-median-rental-room-prices/spain_muni_median_rent_room.csv" | absolute_url}})
 
-{% highlight python %}
-for i in range(len(data['objects']['municipios']['geometries'])):
-    municipality_id = data['objects']['municipios']['geometries'][i]['id']
-    price = 0
-    try:
-        price = m.loc[municipality_id].price_raw
-    except KeyError:
-        pass
-    data['objects']['municipios']['geometries'][i]['properties']['rate'] = price
-{% endhighlight %}
+As you can see in the interactive map at the begining of this post, there is a huge number of municipalities with no data.
+
+For example Guadalajara province only have a few municipalities close to Madrid province where people offer a room to rent. This is because in rural areas the price of a full apartment is lower than renting a room in big city.
+
+<div class="full">
+    <img class="img-fluid" src="/assets/posts/{{page.slug}}/guadalajara-room-rent.png">
+</div>
+
+Exploring futher the map we can see a rare phenomenon; the highest room rental prices are in two small island in the Mediterranean sea, part of the Balearic Islands: Ibiza and Formentera.
+This could be explain because there is a high demand of turistic apartments (specially with airbnb) and there is no enought houses available for the local people to afford it.
+
+If you know how to read Spanish, take a look at this newspapper article called "No place to live in Ibiza": 
+[En Ibiza no hay quien viva](https://www.elconfidencial.com/vivienda/2017-03-05/ibiza-alquiler-apartamento-turismo_1341558/)
+
+<div class="full">
+    <img class="img-fluid" src="/assets/posts/{{page.slug}}/formentera-room-rent.png">
+</div>
+
+In Ibiza we can check what is the sample size for each municipality, and for example in Sant Josep de sa Talia or Santa Euleria des Rius there is arround 10 rooms for rent:
 
 {% highlight python %}
 # Formentera (7024)
@@ -115,7 +118,51 @@ Santa Euleria des Riu
 df2.loc[df2['code']=='7054'].count()
 geocode_raw     10
 {% endhighlight %}
+
 ## Visualization 
-Hello!
+[Martín Gonzalez](https://github.com/martgnz) maintains a repository that provides a simple script to generate TopoJSON files from the Spanish National Geographic Institute’s National Reference Geographic Equipment vector data called [es-atlas](https://github.com/martgnz/es-atlas), that is inspired in Mike Bostock’s [us-atlas](https://github.com/topojson/us-atlas) and [world-atlas](https://github.com/topojson/us-atlas).
+He also maintains with Lukas Appelhans [Span](https://github.com/newsappsio/spam), a small library to create modern Canvas maps with [D3](https://github.com/d3/d3).
+
+Lazy as I am, I just copy one of his examples, change the legends, more detailed administrative borders, colors and make a small snippet directly in django console to change the `rate` variable:
+
+{% highlight python %}
+for i in range(len(data['objects']['municipios']['geometries'])):
+    municipality_id = data['objects']['municipios']['geometries'][i]['id']
+    price = 0
+    try:
+        price = m.loc[municipality_id].price_raw
+    except KeyError:
+        pass
+    data['objects']['municipios']['geometries'][i]['properties']['rate'] = price
+{% endhighlight %}
+
+You can download the json used in this example from:
+* [municipalities.json](/assets/posts/{{page.slug}}/municipalities.json)
+* [provinces.json](/assets/posts/{{page.slug}}/provinces.json)
 
 ## Conclusions
+
+As happend in last post, [Madrid Neighborhood monthly parking]({{ site.baseurl }}{% post_url 2018-02-02-madrid-neighborhood-monthly-parking %}), we have a poor quality sample size:
+
+{% highlight python %}
+df2.count()
+geocode_raw     16653
+price_raw       16653
+planet          16653
+continent       16653
+country         16653
+province        16653
+area            16653
+zone            16653
+munic           16653
+district        15526
+neighborhood    10213
+code            16653
+dtype: int64
+{% endhighlight %}
+
+This is because there aren't final prices (16,5K rooms is a decent sample). We don't have a way to be sure what was the final price of that room.
+
+Same conclusion as before post, we could avoid this problem if we take an snaptshoot every day for a month of the Idealista.com data and delete the items that have been online for long periods of time. This would avoid the highest items prices that are not going to be rented and also we could make our sample size bigger.
+
+On the other hand, this map is far more understandable; it's interactive, zoomable and it show information of the name and median rent price.
