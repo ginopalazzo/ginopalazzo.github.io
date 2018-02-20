@@ -12,11 +12,11 @@ The city of Madrid, for example, is a municipality.
 
 No data of garages. No real estate data prices of districts or neighborhood of Madrid found.
 
-[idealista.com][idealista] is the leader of the real estate online marketplace in Spain (aslo in Portugal and Italy I think). They offer [some data][idealista-prices] and an limited [API][idealista-api].
+[idealista.com][idealista] is the leader of the real estate online marketplace in Spain. They offer [some data][idealista-prices] and an limited [API][idealista-api].
 
 Poor information.   
 
-I decided to take a snapshot of Idealista garage market for a random day in february. I use [Scrapy][scrapy] (for scraping) and [Django][django] (for handy queries) python frameworks. I wrote a small note about how I've integrated [Django and Scrapy]({{ site.baseurl }}{% post_url 2017-12-01-django-scrapy %}) and I will try to explore deeper in this topic later. Also I used pandas library to clean the data in a DataFrame format, grouping by Municipality, district and neighborhood code to calculate the median. Also added the official geocode for each neighborhood.
+I decided to take a snapshot of Idealista garage market for a random day in february. I used [Scrapy][scrapy] (for scraping) and [Django][django] (for handy queries) python frameworks. I wrote a small note about how I've integrated [Django and Scrapy]({{ site.baseurl }}{% post_url 2017-12-01-django-scrapy %}) and I will try to explore deeper in this topic later. I also used pandas library to clean the data in a DataFrame format, grouping by Municipality, district and neighborhood code to calculate the median. Also added the official geocode for each neighborhood.
 
 {% highlight csv %}
      municipality  district  neighbourhood  geocode  price
@@ -57,9 +57,7 @@ This is the output:
 
 **¿How?**
 
-The field geocode is the string join of the code of the district and the neighborhood. This is how is represented each neighborhood in:
-* [Spanish National Stadistical Institute](http://www.ine.es/)
-* [Madrid CityHall Open Data](https://datos.madrid.es/)
+The field geocode is the string join betweem the district's and the neighborhood's code. That's how [Spanish National Stadistical Institute](http://www.ine.es/) and [Madrid CityHall Open Data](https://datos.madrid.es/) represent it.
 
 And I found a really nice and well mantained [TopoJSON of Madrid][martgnz-madrid] with the neighborhoods and districts borders made by [martgnz][martgnz].
 

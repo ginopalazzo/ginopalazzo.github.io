@@ -8,16 +8,16 @@ categories: ["Data", "Visualization", "Python", "d3.js"]
 ## Overview
 
 Spanish real estate market can be intense:
-* Wages are one of the lowest in the E.U. (most common annualy salary, stadistical mode, is 16.490€. Arround 1100€ per month after taxes)
+* Wages are one of the lowest in the E.U. (most common annualy salary, stadistical mode, is 16,490€. Arround 1,100€ per month after taxes)
 * High rate of unemployment.
-* The job places are concentrate in the big cities.
+* Job vacancies concentrate in the big cities.
 * Incredible rise of the house rent prices in cities like Madrid and Barcelona.
 
 <div class="full">
     <img class="img-fluid" src="/assets/posts/{{page.slug}}/barcelona-room-rent.png">
 </div>
 
-With this situation, room sharing is becoming the only choice for many workers that wanted to live close to their job place.
+Given the situation, room sharing is becoming the only choice for many employees that wanted to live close to their job place.
 
 Lets try to explore a little deeper what is happening in the Spanish room rental market with the next interactive map.
 
@@ -29,11 +29,11 @@ Read futher for understanding the data and visualization behind it.
 ## Data
 There is a mayor digital player in the Spanish room sharing advertising marke, [idealista.com](https://www.idealista.com), and lots of secundary players like [Badi](https://badiapp.com/), [milanuncios](https://www.milanuncios.com/pisos-compartidos/), [spotahome](https://www.spotahome.com/es/alquiler/madrid/habitaciones-amuebladas)...
 
-I've extracted the data from idealista because I've already made a scrapper for this webpage (I'll upload it to github when I clean it a little ;)).
+I've extracted the data from idealista because I've already made a scrapper for this webpage (I'll opensource it very soon ;)).
 
-I took a snapshot of Idealista room renting market for Spain in random day in february. I use, like I have done in [Madrid Neighborhood monthly parking]({{ site.baseurl }}{% post_url 2018-02-02-madrid-neighborhood-monthly-parking %}) post, [Scrapy (for scraping) and Django (for handy queries) python frameworks]({{ site.baseurl }}{% post_url 2017-12-01-django-scrapy %}).
+I took a snapshot of Idealista room renting market for Spain on a random day in february. I use, like I have done in [Madrid Neighborhood monthly parking]({{ site.baseurl }}{% post_url 2018-02-02-madrid-neighborhood-monthly-parking %}) post, [Scrapy (for scraping) and Django (for handy queries) python frameworks]({{ site.baseurl }}{% post_url 2017-12-01-django-scrapy %}).
 
-I used pandas library to clean the data in a DataFrame format, grouping by province and municipality  code to calculate the median. Also add the official geocode `m_code` for each municipality so it could be compatible with the [Spanish National Stadistical Institute (INE)](http://www.ine.es/) municipality code: `m_code = int(province) + munic`
+I used pandas library to clean the data in a DataFrame format, grouping by province and municipality  code to calculate the median. I also added the official geocode `m_code` for each municipality so it could be compatible with the [Spanish National Stadistical Institute (INE)](http://www.ine.es/) municipality code: `m_code = int(province) + munic`
 
 {% highlight csv %}
 # Panda DataFrame groupping by administrative boundaries
@@ -95,7 +95,7 @@ For example Guadalajara province only have a few municipalities close to Madrid 
 </div>
 
 Exploring futher the map we can see a rare phenomenon; the highest room rental prices are in two small island in the Mediterranean sea, part of the Balearic Islands: Ibiza and Formentera.
-This could be explain because there is a high demand of turistic apartments (specially with airbnb) and there is no enought houses available for the local people to afford it.
+This could be explained because there is a high demand of turistic apartments (specially with airbnb) and there is no enought houses available for the local people to afford it.
 
 If you know how to read Spanish, take a look at this newspapper article called "No place to live in Ibiza": 
 [En Ibiza no hay quien viva](https://www.elconfidencial.com/vivienda/2017-03-05/ibiza-alquiler-apartamento-turismo_1341558/)
@@ -123,7 +123,7 @@ geocode_raw     10
 [Martín Gonzalez](https://github.com/martgnz) maintains a repository that provides a simple script to generate TopoJSON files from the Spanish National Geographic Institute’s National Reference Geographic Equipment vector data called [es-atlas](https://github.com/martgnz/es-atlas), that is inspired in Mike Bostock’s [us-atlas](https://github.com/topojson/us-atlas) and [world-atlas](https://github.com/topojson/us-atlas).
 He also maintains with Lukas Appelhans [Span](https://github.com/newsappsio/spam), a small library to create modern Canvas maps with [D3](https://github.com/d3/d3).
 
-Lazy as I am, I just copy one of his examples, change the legends, more detailed administrative borders, colors and make a small snippet directly in django console to change the `rate` variable:
+Lazy as I am, I just copied one of his examples, changed the legends, more detailed administrative borders, colors and made a small snippet directly in django console to change the `rate` variable:
 
 {% highlight python %}
 for i in range(len(data['objects']['municipios']['geometries'])):
@@ -163,6 +163,6 @@ dtype: int64
 
 This is because there aren't final prices (16,5K rooms is a decent sample). We don't have a way to be sure what was the final price of that room.
 
-Same conclusion as before post, we could avoid this problem if we take an snaptshoot every day for a month of the Idealista.com data and delete the items that have been online for long periods of time. This would avoid the highest items prices that are not going to be rented and also we could make our sample size bigger.
+As we concluded in the previous post, we could avoid this issue if a snapshot wew taken every day for at least one month and get rid of those items that have been online for a long period of time. This would avoid the highest items prices that are not going to be rented and also we could make our sample size bigger.
 
-On the other hand, this map is far more understandable; it's interactive, zoomable and it show information of the name and median rent price.
+On the other hand, this map is far more understandable; it's interactive, zoomable and it shows information of the name and median rent price.
