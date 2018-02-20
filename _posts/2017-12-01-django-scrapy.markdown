@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Django + Scrapy"
-description: "How I have integrated Django with Scrapy (not necessary the best solution)."
+description: "How I have integrated Django with Scrapy (not necessarily the best solution)."
 date:   2017-12-02 11:07:21 +0100
 categories: ["Python", "Data"]
 ---
