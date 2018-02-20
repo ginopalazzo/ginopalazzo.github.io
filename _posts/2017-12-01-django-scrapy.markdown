@@ -55,6 +55,8 @@ If you are reading this post I suppose that you have a basic knoledge of how Dja
 ...
 {% endhighlight %}
 
+## Django configuration
+
 Make sure you add to the django app and the scrapy proyect to the settings of your django proyect `django-project/django-project/settings.py`:
 
 {% highlight python %}
@@ -64,6 +66,8 @@ INSTALLED_APPS = [
     ...
 ]
 {% endhighlight %}
+
+## Scrapy configuration
 
 We need to add an empty __init__.py file in `django-project/scrapy-project/__init__.py` and `django-project/scrapy-project/spiders/__init__.py` in order django recognize the scrapy project as a package.
 
@@ -145,7 +149,7 @@ Last thing to do is enable in your scrapy settings file `django-project/scrapy-p
 #}
 {% endhighlight %}
 
-**Happy scraping!**
+**HAPPY SCRAPING!**
 
 I'll try to do more post to explore futher the following:
 
