@@ -1,21 +1,10 @@
 ---
 layout: default-post
 ---
-    <div class="se-pre-con"></div>
 
     {{ content }}
     <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
     
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-    <script type="text/javascript">
-        //paste this code under the head tag or in a separate js file.
-        // Wait for window load
-        $(window).load(function() {
-            // Animate loader off screen
-            $(".se-pre-con").fadeOut("slow");;
-        });
-    </script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('.post-small p, h2, h3, h4, figure').addClass('col-lg-7 col-xl-7'); 

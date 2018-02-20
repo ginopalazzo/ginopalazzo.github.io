@@ -65,13 +65,26 @@ li.key {
   padding-right: 0;
 }
 </style>
+<head>
+    <link rel="stylesheet" href="/assets/main.css">
+</head>
 <body>
 <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script src="https://d3js.org/topojson.v1.min.js"></script>
 <script src="https://unpkg.com/rbush@1.4.3/rbush.js"></script>
 <script src="https://unpkg.com/d3-composite-projections@0.4.0"></script>
 <script src="https://unpkg.com/spamjs@1.1.0/spam.min.js"></script>
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+<script type="text/javascript">
+  //paste this code under the head tag or in a separate js file.
+  // Wait for window load
+  $(window).load(function() {
+    // Animate loader off screen
+    $(".se-pre-con").fadeOut("slow");;
+  });
+</script>
+<div class="se-pre-con"></div>
 <script type='text/javascript'>
 var cities = [
 ];
