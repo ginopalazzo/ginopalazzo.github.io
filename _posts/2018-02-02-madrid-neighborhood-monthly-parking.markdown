@@ -16,7 +16,8 @@ No data of garages. No real estate data prices of districts or neighborhood of M
 
 Poor information.   
 
-I decided to take a snapshot of Idealista garage market for a random day in february. I use Scrapy (for scraping) and Django (for handy queries) python frameworks. I wrote a small note about using [Django][django] + [Scrapy][scrapy]. Also I used pandas library to clean the data in a DataFrame format, grouping by Municipality, district and neighborhood code to calculate the median. Also add the official geocode for each neighborhood.
+I decided to take a snapshot of Idealista garage market for a random day in february. I use [Scrapy][scrapy](for scraping) and [Django][django] (for handy queries) python frameworks. I wrote a small note about how I've integrated [Django and Scrapy]({{ site.baseurl }}{% post_url 2017-12-01-django-scrapy %})
+. Also I used pandas library to clean the data in a DataFrame format, grouping by Municipality, district and neighborhood code to calculate the median. Also add the official geocode for each neighborhood.
 {: .col-lg-7 .col-xl-7}
 
 You can download the csv from:

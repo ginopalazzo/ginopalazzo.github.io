@@ -1,11 +1,10 @@
 ---
 layout: post
 title:  "Median rental room prices in Spanish municipalities"
-description: "Map representation of the median price by neighborhood in Madrid municipality area."
+description: "Map representation of the median room prices for Spanish municipalities."
 date:   2018-02-12 11:30:00 +0100
 categories: ["Data", "Visualization", "Python", "d3.js"]  
 ---
-
 ## Overview
 
 hello!
