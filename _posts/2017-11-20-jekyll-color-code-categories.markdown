@@ -9,9 +9,9 @@ categories: ["Jekyll", "Visualization"]
 
 Like in this small blog, usually you will want to organize together post with similar contents in categories or tags.
 
-What I wanted to do is assignate a color to each category in a Jekyll project.
+What I wanted to do is assign a color to each category in a Jekyll project.
 
-For that, I've created in the root directory a `_categories` directory were each category is going to be store as a html (markdown) file.
+For that, I've created in the root directory a `_categories` directory were each category is going to be store as a HTML (markdown) file.
 
 {% highlight console %}
 .
@@ -68,7 +68,7 @@ For displaying the category in a post or in the home page, the snippet that I ca
     {{ "{% endfor " }}%}
 {% endhighlight %}
 
->Was hard to escape que liquid template tags like `{{ "{% xxx " }}%)` while writing this post; I found a clean solution for this problem without using any plugin in:
+>Was hard to escape liquid template tags like `{{ "{% xxx " }}%)` while writing this post; I found a clean solution for this problem without using any plug-in in:
 [https://stackoverflow.com/questions/3426182/how-to-escape-liquid-template-tags](https://stackoverflow.com/questions/3426182/how-to-escape-liquid-template-tags)
 
 The output of this solution is the one you can visualize in the blog.

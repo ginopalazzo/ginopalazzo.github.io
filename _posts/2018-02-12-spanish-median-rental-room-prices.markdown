@@ -17,26 +17,26 @@ Spanish real estate market can be intense:
     <img class="img-fluid" src="/assets/posts/{{page.slug}}/barcelona-room-rent.png">
 </div>
 
-Given the situation, room sharing is becoming the only choice for many employees that wanted to live close to their job place.
+Given the situation, room sharing is becoming the only choice for many employees that want to live close to their place of work.
 
-Lets try to explore a little deeper what is happening in the Spanish room rental market with the next interactive map.
+Let's try to explore a little deeper what is happening in the Spanish room rental market with the next interactive map.
 
 <iframe id="js-iframe" class="container-fluid" sandbox="allow-popups allow-scripts allow-forms allow-same-origin" src="/assets/posts/spanish-median-rental-room-prices/playground.html" marginwidth="0" marginheight="0" style="height:650px; border:none;width: 990px; display: block; margin: 0px auto; " scrolling="no"></iframe>
 
 Yo can explore the map in a separate page to see a [cleaner source code](/assets/posts/spanish-median-rental-room-prices/playground.html)
 
-Read futher for understanding the data and visualization behind it.
+Read futher to understand the data and visualization behind it.
 ## Data
-There is a mayor digital player in the Spanish room sharing advertising marke, [idealista.com](https://www.idealista.com), and lots of secundary players like [Badi](https://badiapp.com/), [milanuncios](https://www.milanuncios.com/pisos-compartidos/), [spotahome](https://www.spotahome.com/es/alquiler/madrid/habitaciones-amuebladas)...
+There is a mayor digital player in the Spanish room sharing advertising market, [idealista.com](https://www.idealista.com), and lots of secondary players like [Badi](https://badiapp.com/), [milanuncios](https://www.milanuncios.com/pisos-compartidos/), [spotahome](https://www.spotahome.com/es/alquiler/madrid/habitaciones-amuebladas)...
 
 I've extracted the data from idealista because I've already made a scrapper for this webpage (I'll opensource it very soon ;)).
 
-I took a snapshot of Idealista room renting market for Spain on a random day in february. I use, like I have done in [Madrid Neighborhood monthly parking]({{ site.baseurl }}{% post_url 2018-02-02-madrid-neighborhood-monthly-parking %}) post, [Scrapy (for scraping) and Django (for handy queries) python frameworks]({{ site.baseurl }}{% post_url 2017-12-01-django-scrapy %}).
+I took a snapshot of Idealista room renting market for Spain on a random day in February. I used, like I did in [Madrid Neighborhood monthly parking]({{ site.baseurl }}{% post_url 2018-02-02-madrid-neighborhood-monthly-parking %}) post, [Scrapy (for scraping) and Django (for simple queries) python frameworks]({{ site.baseurl }}{% post_url 2017-12-01-django-scrapy %}).
 
 I used pandas library to clean the data in a DataFrame format, grouping by province and municipality  code to calculate the median. I also added the official geocode `m_code` for each municipality so it could be compatible with the [Spanish National Stadistical Institute (INE)](http://www.ine.es/) municipality code: `m_code = int(province) + munic`
 
 {% highlight csv %}
-# Panda DataFrame groupping by administrative boundaries
+# Panda DataFrame grouping by administrative boundaries
 country  province  area  zone  munic  m_code     € median
 ES       01        01    001   059    1059     287.5
                    02    001   001    1001     175.0
@@ -88,14 +88,14 @@ You can download the csv from:
 
 As you can see in the interactive map at the begining of this post, there is a huge number of municipalities with no data.
 
-For example Guadalajara province only have a few municipalities close to Madrid province where people offer a room to rent. This is because in rural areas the price of a full apartment is lower than renting a room in big city.
+For example Guadalajara province only has a few municipalities close to Madrid province where people offer a room to rent. This is because in rural areas the price of a full apartment is lower than renting a room in big cities.
 
 <div class="full">
     <img class="img-fluid" src="/assets/posts/{{page.slug}}/guadalajara-room-rent.png">
 </div>
 
-Exploring futher the map we can see a rare phenomenon; the highest room rental prices are in two small island in the Mediterranean sea, part of the Balearic Islands: Ibiza and Formentera.
-This could be explained because there is a high demand of turistic apartments (specially with airbnb) and there is no enought houses available for the local people to afford it.
+Exploring the map futher we can see a rare phenomenon; the highest room rental prices are on two small islands in the Mediterranean sea, part of the Balearic Islands: Ibiza and Formentera.
+This could be explained because there is a high demand for holliday apartments (specially with airbnb) and there are not enough houses available for the local people to afford them.
 
 If you know how to read Spanish, take a look at this newspapper article called "No place to live in Ibiza": 
 [En Ibiza no hay quien viva](https://www.elconfidencial.com/vivienda/2017-03-05/ibiza-alquiler-apartamento-turismo_1341558/)
@@ -104,7 +104,7 @@ If you know how to read Spanish, take a look at this newspapper article called "
     <img class="img-fluid" src="/assets/posts/{{page.slug}}/formentera-room-rent.png">
 </div>
 
-In Ibiza we can check what is the sample size for each municipality, and for example in Sant Josep de sa Talia or Santa Euleria des Rius there is arround 10 rooms for rent:
+In Ibiza we can check what is the sample size for each municipality, and for example in Sant Josep de sa Talia or Santa Euleria des Rius there iare around 10 rooms for rent:
 
 {% highlight python %}
 # Formentera (7024)
@@ -161,8 +161,8 @@ code            16653
 dtype: int64
 {% endhighlight %}
 
-This is because there aren't final prices (16,5K rooms is a decent sample). We don't have a way to be sure what was the final price of that room.
+This is because there aren't any final prices (16,5K rooms is a decent sample). We don't have a way to be sure what the final price of that room was.
 
-As we concluded in the previous post, we could avoid this issue if a snapshot wew taken every day for at least one month and get rid of those items that have been online for a long period of time. This would avoid the highest items prices that are not going to be rented and also we could make our sample size bigger.
+As we concluded in the previous post, we could avoid this issue if a snapshot were taken every day for at least one month and get rid of those items that have been online for a long period of time. This would avoid the highest items prices that are not going to be rented and also we could make our sample size bigger.
 
 On the other hand, this map is far more understandable; it's interactive, zoomable and it shows information of the name and median rent price.

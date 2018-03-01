@@ -1,22 +1,22 @@
 ---
 layout: post
-title:  "Madrid Neighborhood monthly parking"
-description: "Map representation of the median price by neighborhood in Madrid municipality area."
+title:  "Madrid neighbourhood monthly parking"
+description: "Map representation of the median price by neighbourhood in Madrid municipality area."
 date:   2018-02-02 19:10:22 +0100
 categories: ["Data", "Visualization", "Python", "d3.js"]
 ---
 ## Data
-It's hard to find well formed data about the Real Estate market in Spain. Usually the data prices are only for houses (not parkings, offices or lands) and the minimun territorial entity that holds the property is the municipality.
+It's hard to find well detailed data about the Real Estate market in Spain. Usually the data prices are only for houses (not car parks, offices nor sites) and the municipality isminimun territorial entity of any property data.
 
 The city of Madrid, for example, is a municipality.
 
-No data of garages. No real estate data prices of districts or neighborhood of Madrid found.
+No data for garages. No real estate data prices for districts or neighbourhoods of Madrid found.
 
-[idealista.com][idealista] is the leader of the real estate online marketplace in Spain. They offer [some data][idealista-prices] and an limited [API][idealista-api].
+[idealista.com][idealista] is the leader of the real estate online marketplace in Spain. They offer [some data][idealista-prices] and a limited [API][idealista-api].
 
 Poor information.   
 
-I decided to take a snapshot of Idealista garage market for a random day in february. I used [Scrapy][scrapy] (for scraping) and [Django][django] (for handy queries) python frameworks. I wrote a small note about how I've integrated [Django and Scrapy]({{ site.baseurl }}{% post_url 2017-12-01-django-scrapy %}) and I will try to explore deeper in this topic later. I also used pandas library to clean the data in a DataFrame format, grouping by Municipality, district and neighborhood code to calculate the median. Also added the official geocode for each neighborhood.
+I decided to take a snapshot of Idealista garage market for a random day in February. I used [Scrapy][scrapy] (for scraping) and [Django][django] (for handy queries) python frameworks. I wrote a small note about how I've integrated [Django and Scrapy]({{ site.baseurl }}{% post_url 2017-12-01-django-scrapy %}) and I will try to explore deeper this topic later. I also used pandas library to clean the data in a DataFrame format, grouping by Municipality, district and neighbourhood code to calculate the median. I also added the official geocode for each neighbourhood.
 
 {% highlight csv %}
      municipality  district  neighbourhood  geocode  price
@@ -43,25 +43,25 @@ I decided to take a snapshot of Idealista garage market for a random day in febr
 {% endhighlight %}
 
 You can download the csv from:
-[rent-garage-madrid-feb.csv]({{"/assets/posts/madrid-neighborhood-monthly-parking/rent-garage-madrid-feb.csv" | absolute_url}})
+[rent-garage-madrid-feb.csv]({{"/assets/posts/madrid-neighbourhood-monthly-parking/rent-garage-madrid-feb.csv" | absolute_url}})
 where `price` is the median price for each neighbourhood.
 
 ## Visualization 
 
-Once you have the data, it's usefull to represent it in a map to understand it more easily.
+Once you have the data, it's useful to represent it in a map to understand it more easily.
 This is the output:
 
 <div class="full">
     <img class="img-fluid" src="/assets/posts/madrid-neighborhood-monthly-parking/madrid-realestate-garage.png">
 </div>
 
-**¿How?**
+**How?**
 
-The field geocode is the string join betweem the district's and the neighborhood's code. That's how [Spanish National Stadistical Institute](http://www.ine.es/) and [Madrid CityHall Open Data](https://datos.madrid.es/) represent it.
+The field geocode is the string join between the district's and the neighbourhood's code. That's how [Spanish National Stadistical Institute](http://www.ine.es/) and [Madrid CityHall Open Data](https://datos.madrid.es/) represent it.
 
-And I found a really nice and well mantained [TopoJSON of Madrid][martgnz-madrid] with the neighborhoods and districts borders made by [martgnz][martgnz].
+And I found a really nice and well mantained [TopoJSON of Madrid][martgnz-madrid] with the neighbourhoods and districts borders made by [martgnz][martgnz].
 
-I use d3.js to visualize the median prices of each neighborhood by a grey scale (lighter lower, darker higher prices).
+I use d3.js to visualize the median prices of each neighbourhood by a grey scale (lighter lower, darker higher prices).
 
 As we expected the prices in the city center are the highest:
 + high purchasing power
@@ -77,7 +77,7 @@ This experiment does not represent the real garage rental prices in Madrid. They
 We could avoid this problem if we take an snaptshoot every day for a month of the Idealista.com data and delete the garages that have been online for long periods of time. This would avoid the highest garage prices that are not going to be rented and also we could make our sample size bigger.
 
 #### Interactive map
-Is a nice map but it doesn't give as much information about the exact median price by neighborhood, neither the district borders (grouping inside the neighborhoods) or neighborhood names (usually people dont recognize the neighborhood only by shape...).
+Is a nice map but it doesn't give as much information about the exact median price by neighbourhood, neither the district borders (grouping inside the neighbourhoods) or neighbourhood names (usually people dont recognize the neighbourhood only by shape...).
 
 I'll try to avoid this problem in the next post, [Median rental room prices in Spanish municipalities]({{ site.baseurl }}{% post_url 2018-02-12-spanish-median-rental-room-prices %}).
 

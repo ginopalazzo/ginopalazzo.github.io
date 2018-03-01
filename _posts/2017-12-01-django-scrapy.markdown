@@ -7,21 +7,21 @@ categories: ["Python", "Data"]
 ---
 ## First steps
 
-We will use `Django` to easy access and store (maybe present too) the data that we want extract from the web with `Scrapy`. We also need the extension `scrapy-djangoitem` that will conect the data model of the two frameworks. The scrapy project should be inside the django project at the same level of an app.
+We will use `Django` to easy access and store (maybe present too) the data that we want extract from the web with `Scrapy`. We also need the extension `scrapy-djangoitem` that will connect the data model of the two frameworks. The scrapy project should be inside the django project at the same level of an app.
 
-If you are reading this post I suppose that you have a basic knoledge of how Django and Scrapy works. You can read futher in the following links:
+If you are reading this post I suppose that you have a basic knowledge of how Django and Scrapy works. You can read further in the following links:
 
 * [Install django](https://docs.djangoproject.com/en/2.0/intro/install/): `pip install django`
 * [New django project](https://docs.djangoproject.com/en/2.0/intro/tutorial01/): `django-admin startproject mysite`
 * [New django app](https://docs.djangoproject.com/en/2.0/intro/tutorial01/): `python manage.py startapp polls`
 * [Install scrapy](https://doc.scrapy.org/en/latest/intro/install.html): `pip install Scrapy`
 * [Install scrapy-djangoitem](https://github.com/scrapy-plugins/scrapy-djangoitem): `pip install scrapy-djangoitem`
-* [New scrapy proyect & spider](https://doc.scrapy.org/en/latest/intro/tutorial.html): `pip install django`
+* [New scrapy project & spider](https://doc.scrapy.org/en/latest/intro/tutorial.html): `pip install django`
 
 {% highlight console %}
 # How the tree directory should look like
 ...
-├── requeriments.txt
+├── requirements.txt
 ├── manage.py
 ├── django-project
 │   ├── django-project
@@ -57,7 +57,7 @@ If you are reading this post I suppose that you have a basic knoledge of how Dja
 
 ## Django configuration
 
-Make sure you add to the django app and the scrapy proyect to the settings of your django proyect `django-project/django-project/settings.py`:
+Make sure you add to the django app and the scrapy project to the settings of your django proyect `django-project/django-project/settings.py`:
 
 {% highlight python %}
 INSTALLED_APPS = [
@@ -98,7 +98,7 @@ class ScrapyPrpjectConfig(AppConfig):
     name = 'scrapy-project'
 {% endhighlight %}
 
-`django-project/scrapy-project/items.py` we create the scrapy items wich inheritate from DjangoItem and we asign them to the django model in the `django_model` variable:
+`django-project/scrapy-project/items.py` we create the scrapy items which inherit from DjangoItem and we assign them to the django model in the `django_model` variable:
 
 {% highlight python %}
 import scrapy
@@ -112,7 +112,7 @@ class YyyyItem(DjangoItem):
     django_model = Yyyy
 {% endhighlight %}
 
-Now the DjangoItems before created are ready to use in the spider. Also we could access to the Djago model through the Django ORM (delete, create, queries...). `django-project/scrapy-project/spiders/spider.py`
+Now the DjangoItems before created are ready to use in the spider. Also we could access to the Django model through the Django ORM (delete, create, queries...). `django-project/scrapy-project/spiders/spider.py`
 
 {% highlight python %}
 # Scrapy Items imports
@@ -151,7 +151,7 @@ Last thing to do is enable in your scrapy settings file `django-project/scrapy-p
 
 **HAPPY SCRAPING!**
 
-I'll try to do more post to explore futher the following:
+I'll try to do more post to explore further the following:
 
 >Usually you would use the scrapy command line to start the crawler. But if you want to do recurrent scraping in the same doming probably you would have to:
 * **Programmatically**: use asynchronous messaging system like [Celery](http://www.celeryproject.org/) and a broker like [RabbitMQ](https://www.rabbitmq.com/)
