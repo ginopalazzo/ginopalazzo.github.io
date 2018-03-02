@@ -2,7 +2,7 @@
 layout: post
 title:  "Django + Scrapy"
 description: "How I have integrated Django with Scrapy (not necessarily the best solution)."
-date:   2017-12-02 11:07:21 +0100
+date:   2018-01-03 21:21:01 +0100
 categories: ["Python", "Data"]
 ---
 ## First steps
@@ -57,7 +57,7 @@ If you are reading this post I suppose that you have a basic knowledge of how Dj
 
 ## Django configuration
 
-Make sure you add to the django app and the scrapy project to the settings of your django proyect `django-project/django-project/settings.py`:
+Make sure you add to the django app and the scrapy project to the settings of your django project `django-project/django-project/settings.py`:
 
 {% highlight python %}
 INSTALLED_APPS = [

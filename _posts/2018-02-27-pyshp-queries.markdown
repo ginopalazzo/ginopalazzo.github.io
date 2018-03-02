@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Writing a small query snippet for pyshp records"
-description: "pyshp is the standard library for reading and writing shp files. Let's try to make some queries."
+description: "pyshp is the most used python library for reading and writing shp files. Let's try to make some queries."
 date:   2018-02-27 07:17:11 +0100
 categories: ["Python", "Data"]
 ---
@@ -11,7 +11,6 @@ If you want to read/write shp files in Python you are probably going to use [pys
 I tried to find a python complement for pyshp library in [pypi](https://pypi.python.org/pypi?:action=browse&show=all&c=391) that could make queries on the database file `.dbf`.
 
 Given the Spanish [census section](http://en.eustat.eus/documentos/elem_3830/definicion.html) shapefile ([INE Cartografía digitalizada](http://www.ine.es/censos2011_datos/cen11_datos_resultados_seccen.htm)) we can visualize it with [Mapshaper](http://mapshaper.org/):
-
 
 <div class="full">
     <a href="/assets/posts/{{page.slug}}/spain.png">
@@ -133,7 +132,7 @@ View of Retiro census section inside Madrid municipality area inside Madrid Prov
 
 ## Next steps
 
-Making queries this way is king of odd. It would be nice to make it similar to how Django ORM do it. For example:
+Making queries this way is kind of odd. It would be nice to make it similar to how Django ORM do it. For example:
 
  sf.objects.filter(
     NPRO='Barcelona'

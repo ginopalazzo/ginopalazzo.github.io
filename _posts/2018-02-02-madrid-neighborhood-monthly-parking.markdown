@@ -6,13 +6,13 @@ date:   2018-02-02 19:10:22 +0100
 categories: ["Data", "Visualization", "Python", "d3.js"]
 ---
 ## Data
-It's hard to find well detailed data about the Real Estate market in Spain. Usually the data prices are only for houses (not car parks, offices nor sites) and the municipality isminimun territorial entity of any property data.
+It's hard to find well detailed data about the Real Estate market in Spain. Usually the data prices are only for houses (not car parks, offices nor sites) and the municipality is minimum territorial entity of any property data.
 
 The city of Madrid, for example, is a municipality.
 
 No data for garages. No real estate data prices for districts or neighbourhoods of Madrid found.
 
-[idealista.com][idealista] is the leader of the real estate online marketplace in Spain. They offer [some data][idealista-prices] and a limited [API][idealista-api].
+[idealista.com][idealista] is the leader of the real estate on-line marketplace in Spain. They offer [some data][idealista-prices] and a limited [API][idealista-api].
 
 Poor information.   
 
@@ -57,11 +57,11 @@ This is the output:
 
 **How?**
 
-The field geocode is the string join between the district's and the neighbourhood's code. That's how [Spanish National Stadistical Institute](http://www.ine.es/) and [Madrid CityHall Open Data](https://datos.madrid.es/) represent it.
+The field geocode is the string join between the district's and the neighbourhood's code. That's how [Spanish National Statistical Institute](http://www.ine.es/) and [Madrid CityHall Open Data](https://datos.madrid.es/) represent it.
 
-And I found a really nice and well mantained [TopoJSON of Madrid][martgnz-madrid] with the neighbourhoods and districts borders made by [martgnz][martgnz].
+And I found a really nice and well maintained [TopoJSON of Madrid][martgnz-madrid] with the neighbourhoods and districts borders made by [martgnz][martgnz].
 
-I use d3.js to visualize the median prices of each neighbourhood by a grey scale (lighter lower, darker higher prices).
+I use d3.js to visualize the median prices of each neighbourhood by a gray scale (lighter lower, darker higher prices).
 
 As we expected the prices in the city center are the highest:
 + high purchasing power
@@ -72,12 +72,12 @@ As we expected the prices in the city center are the highest:
 ## Conclusions 
 
 #### Offer prices & sample size
-This experiment does not represent the real garage rental prices in Madrid. They are a snaptshoot only of the offer prices for a day. So the data is incomplete and more sample size is requiered.
+This experiment does not represent the real garage rental prices in Madrid. They are a snapshot only of the offer prices for a day. So the data is incomplete and more sample size is required.
 
-We could avoid this problem if we take an snaptshoot every day for a month of the Idealista.com data and delete the garages that have been online for long periods of time. This would avoid the highest garage prices that are not going to be rented and also we could make our sample size bigger.
+We could avoid this problem if we take an snapshot every day for a month of the Idealista.com data and delete the garages that have been on line for long periods of time. This would avoid the highest garage prices that are not going to be rented and also we could make our sample size bigger.
 
 #### Interactive map
-Is a nice map but it doesn't give as much information about the exact median price by neighbourhood, neither the district borders (grouping inside the neighbourhoods) or neighbourhood names (usually people dont recognize the neighbourhood only by shape...).
+Is a nice map but it doesn't give us much information about the exact median price by neighbourhood, neither the district borders (grouping inside the neighbourhoods) or neighbourhood names (usually people don't recognize the neighbourhood only by shape...).
 
 I'll try to avoid this problem in the next post, [Median rental room prices in Spanish municipalities]({{ site.baseurl }}{% post_url 2018-02-12-spanish-median-rental-room-prices %}).
 
