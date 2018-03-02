@@ -30,6 +30,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.row {
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
 .icon-at-sign:before {
   content: "\e900";
 }
