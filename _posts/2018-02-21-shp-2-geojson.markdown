@@ -6,16 +6,16 @@ date:   2018-01-13 16:17:01 +0100
 categories: ["Data", "Visualization"]
 ---
 ## Overview
-Public administrations usually provides maps and public records in shapefile formats.
+Public administrations usually provide maps and public records in shapefile formats.
 
 ## Shapefile
 
-The shapefile is a geospatial vector data format introduced in the earlies 90s . Actually is a collection of three files:
+The shapefile is a geospatial vector data format introduced in the early 90's . Actually, it is a collection of three files:
 - `.shp: binary shapes (polygon...), the geometry itself.
 - `.dbf`: data of shapes or records. In dBase format.
 - `.shx`: shape index format for quicker indexing.
 
-Other files like `.proj`, `.shp.xml`, `.sbn` ... may be include.
+Other files like `.proj`, `.shp.xml`, `.sbn` ... may be included.
 
 In this example we are going to use the Spanish [census section](http://en.eustat.eus/documentos/elem_3830/definicion.html) shapefile ([INE Cartografía digitalizada](http://www.ine.es/censos2011_datos/cen11_datos_resultados_seccen.htm)):
 
@@ -25,7 +25,7 @@ In this example we are going to use the Spanish [census section](http://en.eusta
     </a>
 </div>
 
-Despite useful for many purposes, shapefiles are not the best option for human reading or web visualization. The main problem is the size of the `.shp` files:
+Despite being useful for many purposes, shapefiles are not the best option for human reading or web visualization. The main problem is the size of the `.shp` files:
 
 {% highlight console %}
 ginopalazzo@MacBook-Air cartografia_censo2011_nacional $ ls -la
@@ -60,17 +60,17 @@ A notable extension of GeoJSON is TopoJSON, that encodes geospatial topology and
 
 How to convert shapefiles into json type of files?
 
-#### Web browser
+#### Web browser
 - [Mapsharer](http://mapshaper.org/): Best one. Shapefile, geojson, topojson, csv, svg & map representation
 - [geojson-topojson](http://jeffpaine.github.io/geojson-topojson/): GeoJSON <-> TopoJSON
 - [Distillery](http://shancarter.github.io/distillery/): GeoJSON -> TopoJSON & Map representation 
 
 #### NodeJS & CL
-[Mike Bostock](https://medium.com/@mbostock) wrote wonderful long post with neat examples:
+[Mike Bostock](https://medium.com/@mbostock) wrote wonderful long posts with neat examples:
 https://medium.com/@mbostock/command-line-cartography-part-1-897aa8f8ca2c
 
-#### Python
-There are several gist solutions with different libraries:
+#### Python
+There are several gist solutions with different python libraries:
 - [json+ogr](https://gist.github.com/AlexArcPy/2fc9f41ca164f76fcbb30ebca273b59f )
 - [Bulk convert shapefiles to geojson using ogr2ogr](https://gist.github.com/benbalter/5858851)
 - [PyShp, shp to geojson in python](https://gist.github.com/frankrowe/6071443)

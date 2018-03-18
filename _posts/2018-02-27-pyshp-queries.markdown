@@ -18,7 +18,7 @@ Given the Spanish [census section](http://en.eustat.eus/documentos/elem_3830/def
     </a>
 </div>
 
-The goal is select parts of a shapefile map and save it as another collection of `.shp`, `.dbf`, `shx` files. For example: 
+The goal is to select parts of a shapefile map and save it as another collection of `.shp`, `.dbf`, `shx` files. For example: 
 - select from Spanish census section:
     -  province: Madrid 
     -  autonomy: Castilla y León, Galicia
@@ -31,12 +31,12 @@ The goal is select parts of a shapefile map and save it as another collection of
 
 ## Shapefile
 
-The shapefile is a geospatial vector data format. Actually is a collection of three files:
+The shapefile is a geospatial vector data format. Actually, it is a collection of three files:
 - `.shp: binary shapes (polygon...), the geometry itself.
 - `.dbf`: data of shapes or records. In dBase format.
 - `.shx`: shape index format (not mandatory) for quicker indexing.
 
-Other files like `.proj`, `.shp.xml`, `.sbn` ... may be include.
+Other files like `.proj`, `.shp.xml`, `.sbn` ... may be included.
 
 ## Query snippet
 The `.dbf` file has the following fields for each shape:
@@ -46,7 +46,7 @@ The `.dbf` file has the following fields for each shape:
 
 For example `NPROV` is the name of the province, `NMUN` is the name of the municipal area and `CUMUN` is the municipal code.
 
-We would like to select in the same query multiple fields with multiple values, for example, NPRO = Madrid, Sevilla and NMUN = Barcelona.
+We would like to select in the same query, multiple fields with multiple values, for example, NPRO = Madrid, Sevilla and NMUN = Barcelona.
 
 {% highlight python %}
 import shapefile
@@ -89,7 +89,7 @@ sf = ShapeFileUtils("SECC_CPV_E_20111101_01_R_INE",
                      encoding="latin1")
 {% endhighlight %}
 
-Then we make a query selecting several provinces from the North of Spain, skipping Asturias, one autonomous region and the most populate municipalities from Asturias:
+Then we make a query selecting several provinces from the North of Spain, skipping Asturias, one autonomous region and the most populated municipalities from Asturias:
 
 {% highlight python %}
 wq = sf.query(
@@ -101,7 +101,7 @@ wq = sf.query(
 wq.save('shapefiles/test/query_test')
 {% endhighlight %}
 
-It will return a `shapefile.Writer` object that we can save and visualize it in [Mapshaper](http://mapshaper.org/):
+It will return a `shapefile.Writer` object that we can save and visualize in [Mapshaper](http://mapshaper.org/):
 
 <div class="full">
     <a href="/assets/posts/{{page.slug}}/galicia-castilla-y-leon-cantabria-asturias-municipios.png">
@@ -109,7 +109,7 @@ It will return a `shapefile.Writer` object that we can save and visualize it in 
     </a>
 </div>
 
-We cal also make two queries to save two shapefiles and represent them together. Madrid province and Madrid municipality area:
+We can also make two queries to save two shapefiles and represent them together. Madrid province and Madrid municipality area:
 
 <div class="full">
     <a href="/assets/posts/{{page.slug}}/madrid-madrid.png">

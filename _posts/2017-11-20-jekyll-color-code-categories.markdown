@@ -7,11 +7,11 @@ categories: ["Jekyll", "Visualization"]
 ---
 ## Overview
 
-Like in this small blog, usually you will want to organize together post with similar contents in categories or tags.
+Like in this small blog, usually you will want to organize together posts with similar contents in categories or tags.
 
 What I wanted to do is assign a color to each category in a Jekyll project.
 
-For that, I've created in the root directory a `_categories` directory were each category is going to be store as a HTML (markdown) file.
+For that, I've created in the root directory a `_categories` directory where each category is going to be stored as a HTML (markdown) file.
 
 {% highlight console %}
 .
@@ -54,7 +54,7 @@ collections:
   - categories
 {% endhighlight %}
 
-For displaying the category in a post or in the home page, the snippet that I came with is the following (probably a better solution could be thought):
+For displaying the category in a post or in the home page, the snippet that I came up with is the following (probably a better solution could be thought up):
 
 {% highlight liquid %}
     {{ "{% for category in page.categories " }}%}
@@ -68,7 +68,7 @@ For displaying the category in a post or in the home page, the snippet that I ca
     {{ "{% endfor " }}%}
 {% endhighlight %}
 
->Was hard to escape liquid template tags like `{{ "{% xxx " }}%)` while writing this post; I found a clean solution for this problem without using any plug-in in:
+>Was hard to escape liquid template tags like `{{ "{% xxx " }}%)` while writing this post; I found a clean solution for this problem without using any plug-ins in:
 [https://stackoverflow.com/questions/3426182/how-to-escape-liquid-template-tags](https://stackoverflow.com/questions/3426182/how-to-escape-liquid-template-tags)
 
 The output of this solution is the one you can visualize in the blog.

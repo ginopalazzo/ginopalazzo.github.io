@@ -29,7 +29,7 @@ Read further to understand the data and visualization behind it.
 ## Data
 There is a mayor digital player in the Spanish room sharing advertising market, [idealista.com](https://www.idealista.com), and lots of secondary players like [Badi](https://badiapp.com/), [Milanuncios](https://www.milanuncios.com/pisos-compartidos/), [Spotahome](https://www.spotahome.com/es/alquiler/madrid/habitaciones-amuebladas)...
 
-I've extracted the data from idealista because I've already made a scrapper for this web-page (I'll opensource it very soon ;)).
+I've extracted the data from idealista because I've already made a scrapper for this web-page: [Dedomeno: A Spanish real estate (Idealista) python scraper]({{ site.baseurl }}{% post_url 2018-02-10-dedomeno-spanish-real-estate-python-scraper %}).
 
 I took a snapshot of Idealista room renting market for Spain on a random day in February. I used, like I did in [Madrid Neighborhood monthly parking]({{ site.baseurl }}{% post_url 2018-02-02-madrid-neighborhood-monthly-parking %}) post, [Scrapy (for scraping) and Django (for simple queries) python frameworks]({{ site.baseurl }}{% post_url 2017-12-01-django-scrapy %}).
 
