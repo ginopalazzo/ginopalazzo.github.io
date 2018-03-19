@@ -125,5 +125,5 @@ Despite it working, Zoidberg is still a child lobster scraper that need a lot of
 Margalet is supposed to be the best femoracetabular specialist in Spain, but after using Zoidberg, I realized that lots of people are complaining about his new technique called "out inside". No complaints about Pérez Carro, my new hip doctor.
 
 If you understand Spanish, you can see the differences Zoidberg found between the doctors:
-- [margalet.csv]({{"/assets/posts/zoidberg-surgery-doctor-scraper/margale.csv" | absolute_url}})
+- [margalet.csv]({{"/assets/posts/zoidberg-surgery-doctor-scraper/margalet.csv" | absolute_url}})
 - [perez-carro.csv]({{"/assets/posts/zoidberg-surgery-doctor-scraper/perez-carro.csv" | absolute_url}})
