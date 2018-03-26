@@ -64,17 +64,17 @@ git clone git@github.com:ginopalazzo/zoidberg.git
 From a project:
 
 {% highlight python %}
-from zoidberg import zoidberg
+from zoidberg.zoidberg_main import Zoidberg
 
-z = zoidberg.Zoidberg(country='es', doctor='margalet', area="traumatologia", illness="femoroacetabular", path='test.csv', output='csv')
+z = Zoidberg(country='es', doctor='margalet', area="traumatologia", illness="femoroacetabular", path='test.csv', output='csv')
 z.conf()
 z.run()
 {% endhighlight %}
 
-Or from CLI (although it will change in futures versions):
+Or from CLI (Zoidberg will ask you several questions in order to find the doctor reviews):
 
-{% highlight python %}
-python zoidberg.py -c es -d margalet -a traumatologia -i femoroacetabular -p test.csv -o csv
+{% highlight console %}
+zoidberg
 {% endhighlight %}
 
 ## How it works
