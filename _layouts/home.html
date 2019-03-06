@@ -12,7 +12,7 @@ layout: default
   {% if site.posts.size > 0 %}
     <div class="row mb-2">
       <!--{% assign posts=site.posts | where:"lang", page.lang %}-->
-      {% for post in posts %}
+      {% for post in site.posts %}
       <!-- Post.Python: Django + Scrapy -->
       <div class="col-md-6">
         <div class="card flex-md-row mb-4 box-shadow h-md-250">
