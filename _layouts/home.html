@@ -10,8 +10,8 @@ layout: default
   {{ content }}
 
   {% if site.posts.size > 0 %}
+  <!--{% assign posts=site.posts | where:"lang", page.lang %}-->
     <div class="row mb-2">
-      <!--{% assign posts=site.posts | where:"lang", page.lang %}-->
       {% for post in site.posts %}
       <!-- Post.Python: Django + Scrapy -->
       <div class="col-md-6">
