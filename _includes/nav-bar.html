@@ -4,7 +4,7 @@
         <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="d-none d-md-block col-1 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-lg-4 pt-1">
                 <!--<a class="navbar-brand" href="/"><span class="icon-home social-icon"> </span></a>-->
-                <ul>
+                <ul class="lang">
                     {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
                     {% for post in posts %}
                       <li>
