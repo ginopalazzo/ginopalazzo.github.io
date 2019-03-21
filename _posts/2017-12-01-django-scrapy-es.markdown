@@ -160,9 +160,4 @@ Intentaré realizar más entradas en el blog para explorar los siguientes puntos
 
 >Normalmente se usa la linea de comandos para empezar un crawler. Pero si quieres realizar un scrapeo recurrente, probablemente será necesario hacer lo siguiente:
 * **De forma Programática**: utilizando un sistema asíncrono de mensajería como [Celery](http://www.celeryproject.org/) y un broker como [RabbitMQ](https://www.rabbitmq.com/)
-* **Desde las vistas**: lanzando los spiders desde las vistas de Django con 'python-scrapyd-api', tal y como explican en [How to use Scrapy with Django Application](https://medium.com/@ali_oguzhan/how-to-use-scrapy-with-django-application-c16fabd0e62e)
-<<<<<<< HEAD
- 
-=======
- 
->>>>>>> origin/master
+* **Desde las vistas**: lanzando los spiders desde las vistas de Django con 'python-scrapyd-api', tal y como explican en [How to use Scrapy with Django Application](https://medium.com/@ali_oguzhan/how-to-use-scrapy-with-django-application-c16
