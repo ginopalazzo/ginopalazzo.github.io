@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "Compose Spanish Census GeoJSON & TopoJSON map"
+lang: en
+ref: shp-2-geojson
 description: "How to compose a GeoJSON and TopoJSON map from dbf and shp file."
 date:   2018-01-13 16:17:01 +0100
 categories: ["Data", "Visualization"]
@@ -20,8 +22,8 @@ Other files like `.proj`, `.shp.xml`, `.sbn` ... may be included.
 In this example we are going to use the Spanish [census section](http://en.eustat.eus/documentos/elem_3830/definicion.html) shapefile ([INE Cartografía digitalizada](http://www.ine.es/censos2011_datos/cen11_datos_resultados_seccen.htm)):
 
 <div class="full">
-    <a href="/assets/posts/{{page.slug}}/ine-spain.png">
-    <img class="img-fluid" src="/assets/posts/{{page.slug}}/ine-spain.png">
+    <a href="/assets/posts/{{page.ref}}/ine-spain.png">
+    <img class="img-fluid" src="/assets/posts/{{page.ref}}/ine-spain.png">
     </a>
 </div>
 

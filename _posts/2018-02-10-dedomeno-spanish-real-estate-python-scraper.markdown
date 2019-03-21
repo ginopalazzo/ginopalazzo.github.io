@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "Dedomeno: A Spanish real estate (Idealista) python scraper"
+lang: en
+ref: dedomeno-spanish-real-estate-python-scraper
 description: "Dedomeno is a python scraper with Django a Scrapy for idealista.com and, hopefully more."
 date:   2018-02-10 13:21:45 +0100
 categories: ["Python", "Data"]
@@ -26,8 +28,8 @@ Because of that, I decided to open source the python scraper that I have used to
 [https://github.com/ginopalazzo/dedomeno](https://github.com/ginopalazzo/dedomeno)
 
 <div class="full">
-    <a href="/assets/posts/{{page.slug}}/dedomeno-1.jpg">
-    <img class="img-fluid" src="/assets/posts/{{page.slug}}/dedomeno-1.jpg">
+    <a href="/assets/posts/{{page.ref}}/dedomeno-1.jpg">
+    <img class="img-fluid" src="/assets/posts/{{page.ref}}/dedomeno-1.jpg">
     </a>
 </div>
 
@@ -67,14 +69,14 @@ The first Dedomeno version was intended to be a homemade crawler for idealista.c
     + Spanish map view with average prices.
 
 <div class="full">
-    <a href="/assets/posts/{{page.slug}}/dedomeno-2.jpg">
-    <img class="img-fluid" src="/assets/posts/{{page.slug}}/dedomeno-2.jpg">
+    <a href="/assets/posts/{{page.ref}}/dedomeno-2.jpg">
+    <img class="img-fluid" src="/assets/posts/{{page.ref}}/dedomeno-2.jpg">
     </a>
 </div>
 
 <div class="full">
-    <a href="/assets/posts/{{page.slug}}/dedomeno-3.jpg">
-    <img class="img-fluid" src="/assets/posts/{{page.slug}}/dedomeno-3.jpg">
+    <a href="/assets/posts/{{page.ref}}/dedomeno-3.jpg">
+    <img class="img-fluid" src="/assets/posts/{{page.ref}}/dedomeno-3.jpg">
     </a>
 </div>
 

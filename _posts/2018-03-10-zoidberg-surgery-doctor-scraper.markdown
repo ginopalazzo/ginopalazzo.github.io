@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "Zoidberg: Python scraper to search for surgeon reviews"
+lang: en
+ref: zoidberg-surgery-doctor-scraper
 description: "Are you ready to operate, Doctor? - I'd love to, but first I have to perform surgery."
 date:   2018-03-10 11:04:22 +0100
 categories: ["Python", "Data"]

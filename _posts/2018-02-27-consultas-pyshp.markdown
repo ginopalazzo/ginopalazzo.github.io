@@ -1,18 +1,18 @@
 ---
 layout: post
-title:  "Writing a small query snippet for pyshp records"
-lang: en
+title:  "Pequeño snippet para hacer queries en registros pyshp"
+lang: es
 ref: pyshp-queries
-description: "pyshp is the most used python library for reading and writing shp files. Let's try to make some queries."
+description: "pyshp es la libreria de Python más usada en archivos shp. Vamos a intentar hacer queries con ella."
 date:   2018-02-27 07:17:11 +0100
 categories: ["Python", "Data"]
 ---
-## Overview
-If you want to read/write shp files in Python you are probably going to use [pyshp](https://github.com/GeospatialPython/pyshp) (or maybe [Fiona](https://pypi.python.org/pypi/Fiona)).
+## Introducción
+Si quieres leer o escribir un archivo shp en Python, probablemente vayas a usar [pyshp](https://github.com/GeospatialPython/pyshp) (o puede que [Fiona](https://pypi.python.org/pypi/Fiona)).
 
-I tried to find a python complement for pyshp library in [pypi](https://pypi.python.org/pypi?:action=browse&show=all&c=391) that could make queries on the database file `.dbf`.
+He intentado encontrar un complemento de Python para la libreria pyshp en [pypi](https://pypi.python.org/pypi?:action=browse&show=all&c=391) con el que pudiera realizae queries en la base de datos contenida en el archivo `.dbf`.
 
-Given the Spanish [census section](http://en.eustat.eus/documentos/elem_3830/definicion.html) shapefile ([INE Cartografía digitalizada](http://www.ine.es/censos2011_datos/cen11_datos_resultados_seccen.htm)) we can visualize it with [Mapshaper](http://mapshaper.org/):
+Dado la [sección censal](http://en.eustat.eus/documentos/elem_3830/definicion.html) española obtenemos el shapefile ([INE Cartografía digitalizada](http://www.ine.es/censos2011_datos/cen11_datos_resultados_seccen.htm)) y lo visualizamos con [Mapshaper](http://mapshaper.org/):
 
 <div class="full">
     <a href="/assets/posts/{{page.ref}}/spain.png">
@@ -20,7 +20,7 @@ Given the Spanish [census section](http://en.eustat.eus/documentos/elem_3830/def
     </a>
 </div>
 
-The goal is to select parts of a shapefile map and save it as another collection of `.shp`, `.dbf`, `shx` files. For example: 
+El objetivo es seleccionar algunas partes del mapa del shapefile y salvarlo como otra colección de archivos `.shp`, `.dbf`, `shx`. Por ejemplo: 
 - select from Spanish census section:
     -  province: Madrid 
     -  autonomy: Castilla y León, Galicia
@@ -33,22 +33,22 @@ The goal is to select parts of a shapefile map and save it as another collection
 
 ## Shapefile
 
-The shapefile is a geospatial vector data format. Actually, it is a collection of three files:
-- `.shp: binary shapes (polygon...), the geometry itself.
-- `.dbf`: data of shapes or records. In dBase format.
-- `.shx`: shape index format (not mandatory) for quicker indexing.
+Shapefile es un formato de datos vectoriales geoespaciales. Realmente, es una colección de tres archivos:
+- `.shp: geometria binaria (poligonos...).
+- `.dbf`: datos de las figuras o registros. En formato dBase.
+- `.shx`: índice de figuras (no es obligatorio) para indexar más rápido.
 
-Other files like `.proj`, `.shp.xml`, `.sbn` ... may be included.
+También es posible que se incluyan otros archivos como `.proj`, `.shp.xml`, `.sbn` ...
 
 ## Query snippet
-The `.dbf` file has the following fields for each shape:
+El archivo `.dbf` tiene los siguientes campos para cada figura:
 {% highlight python %}
 ['OBJECTID', 'CUSEC', 'CUMUN', 'CSEC', 'CDIS', 'CMUN', 'CPRO', 'CCA', 'CUDIS', 'OBS', 'CNUT0', 'CNUT1', 'CNUT2', 'CNUT3', 'CLAU2', 'NPRO', 'NCA', 'NMUN', 'Shape_Leng', 'Shape_area', 'Shape_len']
 {% endhighlight %}
 
-For example `NPROV` is the name of the province, `NMUN` is the name of the municipal area and `CUMUN` is the municipal code.
+Por ejemplo, `NPROV` es el nombre de la provincia, `NMUN` es el nombre del municipio y`CUMUN` es el código del municipio.
 
-We would like to select in the same query, multiple fields with multiple values, for example, NPRO = Madrid, Sevilla and NMUN = Barcelona.
+Queremos selección en la misma query múltiples campos con diversos valores. Por ejemplo, NPRO = Madrid, Sevilla y NMUN = Barcelona.
 
 {% highlight python %}
 import shapefile
@@ -84,14 +84,14 @@ class ShapeFileUtils(shapefile.Reader):
         return w
 {% endhighlight %}
 
-First we load the shapefile from the [Spanish Statistical Institute](http://www.ine.es/censos2011_datos/cen11_datos_resultados_seccen.htm) into our brand new `ShapeFileItils` object that extends from `shapefile.Reader` class:
+Primero, cargamos el shapefile del [Instituto Nacional de Estadísitca]](http://www.ine.es/censos2011_datos/cen11_datos_resultados_seccen.htm) español en el objeto `ShapeFileItils`que extiende de la clase `shapefile.Reader`:
 
 {% highlight python %}
 sf = ShapeFileUtils("SECC_CPV_E_20111101_01_R_INE",
                      encoding="latin1")
 {% endhighlight %}
 
-Then we make a query selecting several provinces from the North of Spain, skipping Asturias, one autonomous region and the most populated municipalities from Asturias:
+Después, realizamos una query seleccionamos algunas provincias del Norte de España, la Comunidad Autónoma de Castilla y León y algunos de los municipios más poblados de Asturias, pero sin seleccionar la provincia:
 
 {% highlight python %}
 wq = sf.query(
@@ -103,7 +103,7 @@ wq = sf.query(
 wq.save('shapefiles/test/query_test')
 {% endhighlight %}
 
-It will return a `shapefile.Writer` object that we can save and visualize in [Mapshaper](http://mapshaper.org/):
+El codigo anterior devolverá un objeto `shapefile.Writer` que podremos visualizar en [Mapshaper](http://mapshaper.org/):
 
 <div class="full">
     <a href="/assets/posts/{{page.ref}}/galicia-castilla-y-leon-cantabria-asturias-municipios.png">
@@ -111,7 +111,7 @@ It will return a `shapefile.Writer` object that we can save and visualize in [Ma
     </a>
 </div>
 
-We can also make two queries to save two shapefiles and represent them together. Madrid province and Madrid municipality area:
+También es posible realizar dos quieries para guardar dos shapefiles disintos y representarlos juntos. En este caso el municipio de Madrid y su provincia:
 
 <div class="full">
     <a href="/assets/posts/{{page.ref}}/madrid-madrid.png">
@@ -124,7 +124,7 @@ wq2 = sf.query(NPRO=['Madrid'])
 wq3 = sf.query(NMUN=['Madrid'])
 {% endhighlight %}
 
-View of Retiro census section inside Madrid municipality area inside Madrid Province:
+Vista de la sección censal del Retiro, dentro del municipio y la provincia de Madrid:
 
 <div class="full">
     <a href="/assets/posts/{{page.ref}}/madrid-madrid-retiro.png">
@@ -132,9 +132,9 @@ View of Retiro census section inside Madrid municipality area inside Madrid Prov
     </a>
 </div>
 
-## Next steps
+## Próximos pasos
 
-Making queries this way is kind of odd. It would be nice to make it similar to how Django ORM do it. For example:
+Resulta algo incómodo realizar las queris de esta manera. Estaría bien poder realizar consultas de manera simiar a cómo se hace con el ORM de Django. Por ejemplo:
 
  sf.objects.filter(
     NPRO='Barcelona'

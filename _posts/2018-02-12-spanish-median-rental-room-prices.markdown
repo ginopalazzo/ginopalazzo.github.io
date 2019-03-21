@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "Median rental room prices in Spanish municipalities"
+lang: en
+ref: spanish-median-rental-room-prices
 description: "Map representation of the median room prices for Spanish municipalities."
 date:   2018-02-12 11:30:00 +0100
 categories: ["Data", "Visualization", "Python", "d3.js"]  
@@ -14,7 +16,7 @@ Spanish real estate market can be intense:
 * Incredible rise of the house rent prices in cities like Madrid and Barcelona.
 
 <div class="full">
-    <img class="img-fluid" src="/assets/posts/{{page.slug}}/barcelona-room-rent.png">
+    <img class="img-fluid" src="/assets/posts/{{page.ref}}/barcelona-room-rent.png">
 </div>
 
 Given the situation, room sharing is becoming the only choice for many employees that want to live close to their place of work.
@@ -91,7 +93,7 @@ As you can see in the interactive map at the beginning of this post, there is a 
 For example Guadalajara province only has a few municipalities close to Madrid province where people offer a room to rent. This is because in rural areas the price of a full apartment is lower than renting a room in big cities.
 
 <div class="full">
-    <img class="img-fluid" src="/assets/posts/{{page.slug}}/guadalajara-room-rent.png">
+    <img class="img-fluid" src="/assets/posts/{{page.ref}}/guadalajara-room-rent.png">
 </div>
 
 Exploring the map further we can see a rare phenomenon; the highest room rental prices are on two small islands in the Mediterranean sea, part of the Balearic Islands: Ibiza and Formentera.
@@ -101,7 +103,7 @@ If you know how to read Spanish, take a look at this newspaper article called "N
 [En Ibiza no hay quien viva](https://www.elconfidencial.com/vivienda/2017-03-05/ibiza-alquiler-apartamento-turismo_1341558/)
 
 <div class="full">
-    <img class="img-fluid" src="/assets/posts/{{page.slug}}/formentera-room-rent.png">
+    <img class="img-fluid" src="/assets/posts/{{page.ref}}/formentera-room-rent.png">
 </div>
 
 In Ibiza we can check what is the sample size for each municipality, and for example in Sant Josep de sa Talia or Santa Euleria des Rius there are around 10 rooms for rent:
@@ -137,8 +139,8 @@ for i in range(len(data['objects']['municipios']['geometries'])):
 {% endhighlight %}
 
 You can download the json used in this example from:
-* [municipalities.json](/assets/posts/{{page.slug}}/municipalities.json)
-* [provinces.json](/assets/posts/{{page.slug}}/provinces.json)
+* [municipalities.json](/assets/posts/{{page.ref}}/municipalities.json)
+* [provinces.json](/assets/posts/{{page.ref}}/provinces.json)
 
 ## Conclusions
 

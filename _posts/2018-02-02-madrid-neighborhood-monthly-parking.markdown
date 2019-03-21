@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "Madrid neighbourhood monthly parking"
+lang: en
+ref: madrid-neighborhood-monthly-parking
 description: "Map representation of the median price by neighbourhood in Madrid municipality area."
 date:   2018-02-02 19:10:22 +0100
 categories: ["Data", "Visualization", "Python", "d3.js"]

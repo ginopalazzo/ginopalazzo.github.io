@@ -10,7 +10,9 @@ categories: ["Jekyll", "Visualization"]
 ## Introducción
 
 Como en este pequeño blog, generalmente querrás organizar las entradas con contenido parecido en categorías o etiquetas.
+
 En este caso, lo que quiero hacer es asignar un color a cada etiqueta en Jekyll.
+
 Para ello, he creado en el directorio raíz un directorio llamado `_categories`, donde se almacenará cada categoría como un archivo HTML (markdown).
 
 {% highlight console %}
@@ -22,7 +24,9 @@ Para ello, he creado en el directorio raíz un directorio llamado `_categories`,
 │   ├── python.html
 │   └── visualization.html
 {% endhighlight %}
+
 El código de una categoría `_categories/jekyll.html` podría ser el siguiente:
+
 {% highlight ruby %}
 ---
 title: Jekyll
@@ -46,10 +50,12 @@ Como en este pequeño blog, generalmente querrás organizar las entradas ...
 {% endhighlight %}
 
 También es necesario añadir una colección de 'categories' en el archivo de configuración `./_config.yml` :
+
 {% highlight ruby %}
 collections:
   - categories
 {% endhighlight %}
+
 Para mostrar dicha categoría en una entrada o en la página principal utilicé el siguiente snippet (aunque seguramente podría haber pensado una solución mejor):
 
 {% highlight liquid %}
