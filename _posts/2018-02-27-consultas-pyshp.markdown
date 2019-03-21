@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Pequeño snippet para hacer queries en registros pyshpWriting a small query snippet for pyshp records"
+title:  "Pequeño snippet para hacer queries en registros pyshp"
 lang: es
 ref: pyshp-queries
-description: "pyshp es la libreria de Python más usada para leer y escribir en archivos shp. Vamos a intentar hacer queries con ella."
+description: "pyshp es la libreria de Python más usada en archivos shp. Vamos a intentar hacer queries con ella."
 date:   2018-02-27 07:17:11 +0100
 categories: ["Python", "Data"]
 ---
