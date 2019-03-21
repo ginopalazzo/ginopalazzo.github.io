@@ -22,8 +22,8 @@ También pueden contener otros archivos como `.proj`, `.shp.xml`, `.sbn` ...
 En este ejemplo se va a utilizar el shapefile ([INE Cartografía digitalizada](http://www.ine.es/censos2011_datos/cen11_datos_resultados_seccen.htm)) de las [secciones censales] (http://en.eustat.eus/documentos/elem_3830/definicion.html) de España:
 
 <div class="full">
-    <a href="/assets/posts/{{page.slug}}/ine-spain.png">
-    <img class="img-fluid" src="/assets/posts/{{page.slug}}/ine-spain.png">
+    <a href="/assets/posts/{{page.ref}}/ine-spain.png">
+    <img class="img-fluid" src="/assets/posts/{{page.ref}}/ine-spain.png">
     </a>
 </div>
 
