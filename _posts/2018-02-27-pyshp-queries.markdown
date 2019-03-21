@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "Writing a small query snippet for pyshp records"
+lang: en
+ref: pyshp-queries
 description: "pyshp is the most used python library for reading and writing shp files. Let's try to make some queries."
 date:   2018-02-27 07:17:11 +0100
 categories: ["Python", "Data"]
