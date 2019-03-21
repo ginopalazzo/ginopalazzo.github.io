@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Django + Scrapy"
-lang: es
+lang: en
 ref: django-scrapy
 description: "How I have integrated Django with Scrapy (not necessarily the best solution)."
 date:   2018-01-03 21:21:01 +0100
