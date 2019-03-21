@@ -140,4 +140,8 @@ Resulta algo incómodo realizar las queris de esta manera. Estaría bien poder r
     NPRO='Barcelona'
 ).exclude(
     NMUN='Prat de Llobregat, El'
+<<<<<<< HEAD
 )...
+=======
+)...
+>>>>>>> origin/master

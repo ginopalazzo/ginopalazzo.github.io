@@ -76,4 +76,8 @@ Hay algunas soluciones gist con diferentes librerias en Python:
 - [json+ogr](https://gist.github.com/AlexArcPy/2fc9f41ca164f76fcbb30ebca273b59f )
 - [Bulk convert shapefiles to geojson using ogr2ogr](https://gist.github.com/benbalter/5858851)
 - [PyShp, shp to geojson in python](https://gist.github.com/frankrowe/6071443)
+<<<<<<< HEAD
 - [Fiona](https://gist.github.com/jwass/6245313)
+=======
+- [Fiona](https://gist.github.com/jwass/6245313)
+>>>>>>> origin/master

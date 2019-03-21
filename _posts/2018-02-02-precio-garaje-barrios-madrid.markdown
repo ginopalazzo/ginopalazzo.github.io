@@ -95,4 +95,8 @@ En la siguiente entrada, [Precio mediano de alquiler de habitaciones en municipi
 [idealista-api]: http://developers.idealista.com/access-request
 [martgnz-madrid]: https://github.com/martgnz/madrid-atlas
 [martgnz]: https://github.com/martgnz/
+<<<<<<< HEAD
 [jekyll-talk]: https://talk.jekyllrb.com/
+=======
+[jekyll-talk]: https://talk.jekyllrb.com/
+>>>>>>> origin/master
