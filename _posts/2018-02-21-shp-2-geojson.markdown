@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "Compose Spanish Census GeoJSON & TopoJSON map"
+lang: en
+ref: shp-2-geojson
 description: "How to compose a GeoJSON and TopoJSON map from dbf and shp file."
 date:   2018-01-13 16:17:01 +0100
 categories: ["Data", "Visualization"]
