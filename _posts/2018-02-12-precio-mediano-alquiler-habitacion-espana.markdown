@@ -28,9 +28,7 @@ Se va a tratar de explorar un poco más en profundida qué está pasando en el m
 Se puede explorar el mapa en una página distinta para ver mejor el [código fuente asociado](/assets/posts/spanish-median-rental-room-prices/playground.html).
 
 A continuación se explica cómo se han sacado los datos y se ha hecho el mapa.
-
 ## Datos
-
 El mayor actor digital en el mercado de los marketplaces de alquiler de habitaciones es [idealista.com](https://www.idealista.com). También hay muchos actores secundarios como [Badi](https://badiapp.com/), [Milanuncios](https://www.milanuncios.com/pisos-compartidos/), [Spotahome](https://www.spotahome.com/es/alquiler/madrid/habitaciones-amuebladas)...
 
 Se han extraido los datos de Idealista porque ya había desarrollado un scrapeador que funcionaba medianamente bien extrayendo datos de Idealista: [Dedomeno: Extrayendo datos de Idealista. El mercado inmobiliario español]({{ site.baseurl }}{% post_url 2018-02-10-dedomeno-espana-scrapeador-python-inmobiliario.markdown %}).
@@ -124,8 +122,8 @@ geocode_raw     10
 {% endhighlight %}
 
 ## Visualización 
-[Martín Gonzalez](https://github.com/martgnz) mantiene un repositorio que proporciona un simple script para general archivos TopoJSON a partir del [Instituto Geografico Nacional español](http://www.ign.es/ign/main/index.do)   llamado [es-atlas](https://github.com/martgnz/es-atlas). Este está inspirado en [us-atlas](https://github.com/topojson/us-atlas) y [world-atlas](https://github.com/topojson/us-atlas) de Mike Bostock.
-También mantiene [Span](https://github.com/newsappsio/spam) junto con Lukas Appelhans, una pequeña libreria para crear mapas Canvas modernos con D3](https://github.com/d3/d3).
+[Martín Gonzalez](https://github.com/martgnz) mantiene un repositorio que proporciona un simple script para general archivos TopoJSON a partir del [Instituto Geografico Nacional español](http://www.ign.es/ign/main/index.do) llamado [es-atlas](https://github.com/martgnz/es-atlas). Este está inspirado en [us-atlas](https://github.com/topojson/us-atlas) y [world-atlas](https://github.com/topojson/us-atlas) de Mike Bostock.
+También mantiene [Span](https://github.com/newsappsio/spam) junto con Lukas Appelhans, una pequeña libreria para crear mapas Canvas modernos con [D3](https://github.com/d3/d3).
 
 Se ha copiado uno de sus ejemplos, cambiado las leyendas y colores, detallado más las fronteras administrativas y se ha hecho un pequeño snippet directamente en la consola de Django para cambiar la variable `rate`:
 
