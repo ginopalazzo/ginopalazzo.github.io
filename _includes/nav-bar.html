@@ -2,22 +2,22 @@
 <nav class="navbarra sticky-top navbar-expand-lg">    
     <header class="container">
         <div class="row flex-nowrap justify-content-between align-items-center">
-            <div class="d-none d-md-block col-1 col-xs-4 col-sm-4 col-md-4 col-lg-4 col-xl-4 col-lg-4 pt-1">
+            <div class="col-4 d-flex justify-content-start align-items-start">
                 <!-- 
                 <a class="navbar-brand" href="/"><span class="icon-home social-icon"> </span></a>
                  -->
-                <ul class="list-inline list-group flex-md-row">
+                <ul class="language list-inline list-group flex-md-row flex-row justify-content-start align-items-start">
                     {% assign posts=site.posts | where:"ref", page.ref | sort: 'lang' %}
                     {% for post in posts %}
                         <li>
-                            <a href="{{ post.url }}" class="{{ post.lang }}">{{ post.lang }}</a>
+                            <a href="{{ post.url }}" class="rounded-circle {{ post.lang }}">{{ post.lang }}</a>
                         </li>
                     {% endfor %}
 
                     {% assign pages=site.pages | where:"ref", page.ref | sort: 'lang' %}
                     {% for page in pages %}
                         <li>
-                            <a href="{{ page.url }}" class="{{ page.lang }}">{{ page.lang }}</a>
+                            <a href="{{ page.url }}" class="rounded-circle {{ page.lang }}">{{ page.lang }}</a>
                         </li>
                     {% endfor %}
 

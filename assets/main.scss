@@ -126,5 +126,11 @@ pre, code {
 }
 
 .en:lang(en), .es:lang(es){
-    font-weight: bold;
+    padding: 3px;
+    color: #f8f8f8;
+    background: #343a40;
+}
+
+.language{
+  margin-left: 0;
 }
