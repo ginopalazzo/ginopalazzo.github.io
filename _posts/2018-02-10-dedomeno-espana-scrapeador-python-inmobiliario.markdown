@@ -8,7 +8,7 @@ date:   2018-02-10 13:21:45 +0100
 categories: ["Python", "Data"]
 ---
 ## Motivación
-Como mencioné anteriormente en [cuánto cuesta una habitación según el municipio en España]({{ site.baseurl }}{% post_url 2018-02-12-precio-mediano-alquiler-habitacion-espana.markdown %}) post, the Spanish real estate market can be intense.
+Como mencioné anteriormente en [cuánto cuesta una habitación según el municipio en España]({{ site.baseurl }}{% post_url 2018-02-12-precio-mediano-alquiler-habitacion-espana %}) post, the Spanish real estate market can be intense.
 
 For citizens:
 Hard to make informed decisions when house buying, real estate investment or even house rental.

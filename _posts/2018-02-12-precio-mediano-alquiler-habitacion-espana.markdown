@@ -31,9 +31,9 @@ A continuación se explica cómo se han sacado los datos y se ha hecho el mapa.
 ## Datos
 El mayor actor digital en el mercado de los marketplaces de alquiler de habitaciones es [idealista.com](https://www.idealista.com). También hay muchos actores secundarios como [Badi](https://badiapp.com/), [Milanuncios](https://www.milanuncios.com/pisos-compartidos/), [Spotahome](https://www.spotahome.com/es/alquiler/madrid/habitaciones-amuebladas)...
 
-Se han extraido los datos de Idealista porque ya había desarrollado un scrapeador que funcionaba medianamente bien extrayendo datos de Idealista: [Dedomeno: Extrayendo datos de Idealista. El mercado inmobiliario español]({{ site.baseurl }}{% post_url 2018-02-10-dedomeno-espana-scrapeador-python-inmobiliario.markdown %}).
+Se han extraido los datos de Idealista porque ya había desarrollado un scrapeador que funcionaba medianamente bien extrayendo datos de Idealista: [Dedomeno: Extrayendo datos de Idealista. El mercado inmobiliario español]({{ site.baseurl }}{% post_url 2018-02-10-dedomeno-espana-scrapeador-python-inmobiliario %}).
 
-Se ha tomado una captura del mercado de alquilerde habitaciones en España mostrado en Idealista para un día aleatorio de febrero 2018. Se ha usado, al igual que en la entrada [Precio de aquiler de garages en barrios de Madrid]({{ site.baseurl }}{% post_url 2018-02-02-precio-garaje-barrios-madrid.markdown %}), dos frameworks de Python: [Scrapy (para el escrapeo) and Django (para consulta sencillas)]({{ site.baseurl }}{% post_url 2017-12-01-django-scrapy-es %}).
+Se ha tomado una captura del mercado de alquilerde habitaciones en España mostrado en Idealista para un día aleatorio de febrero 2018. Se ha usado, al igual que en la entrada [Precio de aquiler de garages en barrios de Madrid]({{ site.baseurl }}{% post_url 2018-02-02-precio-garaje-barrios-madrid %}), dos frameworks de Python: [Scrapy (para el escrapeo) and Django (para consulta sencillas)]({{ site.baseurl }}{% post_url 2017-12-01-django-scrapy-es %}).
 
 También se ha utilizado pandas, una libreria de Python para limpiar los datos en un formato DataFrame, agrupando por el código de provincia y municipio para calcular la mediana. También se ha añadido el geocode oficial `m_code`para cada municipio para que sea compatible con código de municipio dado por el [Instituto Nacional de Estadística (INE)](http://www.ine.es/): `m_code = int(province) + munic`
 
@@ -144,7 +144,7 @@ Se puede descargar el json usado en este ejemplo de:
 
 ## Conclusiones
 
-Como ocurrió en la entrada anterior, [Precio de aquiler de garages en barrios de Madrid]({{ site.baseurl }}{% post_url 2018-02-02-precio-garaje-barrios-madrid.markdown %}), la calidad de la muestra es pobre:
+Como ocurrió en la entrada anterior, [Precio de aquiler de garages en barrios de Madrid]({{ site.baseurl }}{% post_url 2018-02-02-precio-garaje-barrios-madrid %}), la calidad de la muestra es pobre:
 
 {% highlight python %}
 df2.count()
