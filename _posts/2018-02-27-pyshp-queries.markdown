@@ -5,7 +5,8 @@ lang: en
 ref: pyshp-queries
 description: "pyshp is the most used python library for reading and writing shp files. Let's try to make some queries."
 date:   2018-02-27 07:17:11 +0100
-categories: ["Python", "Data"]
+tags: ["Python", "Data"]
+categories: ["Maps"]
 ---
 ## Overview
 If you want to read/write shp files in Python you are probably going to use [pyshp](https://github.com/GeospatialPython/pyshp) (or maybe [Fiona](https://pypi.python.org/pypi/Fiona)).

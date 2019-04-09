@@ -5,7 +5,8 @@ lang: es
 ref: jekyll-color-code-categories
 description: "Cómo implementar categorías de color reutilizables Jekyll."
 date:   2017-12-02 11:07:21 +0100
-categories: ["Jekyll", "Visualization"]
+categories: ["Web"]
+tags: ["Jekyll", "Visualization"]
 ---
 ## Introducción
 

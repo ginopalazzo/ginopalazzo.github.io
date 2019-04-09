@@ -5,7 +5,8 @@ lang: es
 ref: django-scrapy
 description: "Mi solución (no necesesariamente la mejor) para integrar Django con Scrapy ."
 date:   2018-01-03 21:21:01 +0100
-categories: ["Python", "Data"]
+tags: ["Python", "Data"]
+categories: ["Scraper"]
 ---
 ## Primers Pasos
 

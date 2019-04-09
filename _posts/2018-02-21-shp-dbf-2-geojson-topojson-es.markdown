@@ -5,7 +5,8 @@ lang: es
 ref: shp-2-geojson
 description: "Cómo componer un mapa GeoJSON y TopoJSON desde los archivos dbf y shp."
 date:   2018-01-13 16:17:01 +0100
-categories: ["Data", "Visualization"]
+tags: ["Data", "Visualization"]
+categories: ["Maps"]
 ---
 ## Introducción
 Las administraciones públicas distribuyen sus mapas (generalmente) en el formato Shapefile.

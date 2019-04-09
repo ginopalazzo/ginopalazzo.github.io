@@ -5,7 +5,8 @@ lang: es
 ref: pyshp-queries
 description: "pyshp es la libreria de Python más usada en archivos shp. Vamos a intentar hacer queries con ella."
 date:   2018-02-27 07:17:11 +0100
-categories: ["Python", "Data"]
+tags: ["Python", "Data"]
+categories: ["Maps"]
 ---
 ## Introducción
 Si quieres leer o escribir un archivo shp en Python, probablemente vayas a usar [pyshp](https://github.com/GeospatialPython/pyshp) (o puede que [Fiona](https://pypi.python.org/pypi/Fiona)).

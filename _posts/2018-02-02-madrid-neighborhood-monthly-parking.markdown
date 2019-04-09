@@ -5,7 +5,8 @@ lang: en
 ref: madrid-neighborhood-monthly-parking
 description: "Map representation of the median price by neighbourhood in Madrid municipality area."
 date:   2018-02-02 19:10:22 +0100
-categories: ["Data", "Visualization", "Python", "d3.js"]
+tags: ["Data", "Visualization", "Python", "d3.js"]
+categories: ["Maps"]
 ---
 ## Data
 It's hard to find well detailed data about the Real Estate market in Spain. Usually the data prices are only for houses (not car parks, offices nor sites) and the municipality is minimum territorial entity of any property data.

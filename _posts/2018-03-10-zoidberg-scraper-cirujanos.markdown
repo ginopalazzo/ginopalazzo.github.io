@@ -5,7 +5,8 @@ lang: es
 ref: zoidberg-surgery-doctor-scraper
 description: "¿Listo para intervenir, doctor? - Sí, pero primero tengo que operar."
 date:   2018-03-10 11:04:22 +0100
-categories: ["Python", "Data"]
+tags: ["Python", "Data"]
+categories: ["Scraper"]
 ---
 
 ## Motivatión

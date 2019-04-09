@@ -5,7 +5,8 @@ lang: en
 ref: spanish-median-rental-room-prices
 description: "Map representation of the median room prices for Spanish municipalities."
 date:   2018-02-12 11:30:00 +0100
-categories: ["Data", "Visualization", "Python", "d3.js"]  
+tags: ["Data", "Visualization", "Python", "d3.js"] 
+categories: ["Maps"] 
 ---
 ## Overview
 

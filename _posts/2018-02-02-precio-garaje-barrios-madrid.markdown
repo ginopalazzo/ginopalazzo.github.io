@@ -5,7 +5,8 @@ lang: es
 ref: madrid-neighborhood-monthly-parking
 description: "Mapa de alquileres medianos de garajes en los barrios del municipio de Madrid."
 date:   2018-02-02 19:10:22 +0100
-categories: ["Data", "Visualization", "Python", "d3.js"]
+tags: ["Data", "Visualization", "Python", "d3.js"]
+categories: ["Maps"]
 ---
 ## Datos
 Es difícil encontrar información limpia y detallada sobre el mercado inmobiliario en España. Es posible encontrar información sobre precios de casas (aunque no de garajes, oficinas u otras tipoligías de inmuebles) y el municipio es la mínima entidad territorial de la que se disponen datos.

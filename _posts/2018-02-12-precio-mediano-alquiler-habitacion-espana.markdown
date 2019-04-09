@@ -5,7 +5,8 @@ lang: es
 ref: spanish-median-rental-room-prices
 description: "Mapa que representa el precio mediano de alquiler de habitaciones en España."
 date:   2018-02-12 11:30:00 +0100
-categories: ["Data", "Visualization", "Python", "d3.js"]  
+tags: ["Data", "Visualization", "Python", "d3.js"]  
+categories: ["Maps"]
 ---
 ## Introducción
 

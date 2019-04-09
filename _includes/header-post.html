@@ -2,10 +2,10 @@
     <h1 class="gines font-weight-normal"> {{ page.title | escape }} </h1>
       <p class="font-weight-light"> {{ page.description | escape }} </p>
       <span>
-          {% for category in page.categories %}
-            {% for category_template in site.categories %}
-              {% if category == category_template.title %}
-                <strong class="d-inline-block mb-2" style="color:{{category_template.color}};">{{category}}</strong>
+          {% for tag in page.tags %}
+            {% for tag_template in site.tags %}
+              {% if tag == tag_template.title %}
+                <strong class="d-inline-block mb-2" style="color:{{tag_template.color}};">{{tag}}</strong>
               {% endif %}
             {% endfor %}  
           {% endfor %}

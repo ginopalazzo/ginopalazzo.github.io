@@ -5,7 +5,8 @@ lang: es
 ref: dedomeno-spanish-real-estate-python-scraper
 description: "Dedomeno es un scrapeador en Python realizado con Django y Scrapy para Idealista.com."
 date:   2018-02-10 13:21:45 +0100
-categories: ["Python", "Data"]
+tags: ["Python", "Data"]
+categories: ["Scraper"]
 ---
 ## Motivación
 Como mencioné anteriormente en [cuánto cuesta una habitación según el municipio en España]({{ site.baseurl }}{% post_url 2018-02-12-precio-mediano-alquiler-habitacion-espana %}) post, the Spanish real estate market can be intense.
