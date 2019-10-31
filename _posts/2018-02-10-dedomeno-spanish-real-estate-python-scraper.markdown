@@ -12,15 +12,15 @@ categories: ["Scraper"]
 As I mentioned before in the [rental room prices in Spanish municipalities]({{ site.baseurl }}{% post_url 2018-02-12-spanish-median-rental-room-prices %}) post, the Spanish real estate market can be intense.
 
 For citizens:
-Hard to make informed decisions when house buying, real estate investment or even house rental.
+Is hard to make informed decisions when house buying, real estate investment or even house rental.
 
 For big companies:
 Trust funds, real estate companies, banks... it is so easy. They have or could buy the data and insights to make the right investment decision.
 
-It not a fair competition.
+It is not a fair competition.
 
 ## Overview
-[Idealista.com](https://www.idealista.com/) is the de facto standard for searching for a house or other real estate product. Is is the biggest on-line house marketplace in Spain, even the real estate agencies advertise their products on this web-page.
+[Idealista.com](https://www.idealista.com/) is the de facto standard for searching for a house or other real estate product. It is the biggest on-line house marketplace in Spain, even the real estate agencies advertise their products on this web-page.
 
 They have plenty of data which of course, they don't share for free. They only have a few and [not very detailed reports](https://www.idealista.com/informes-precio-vivienda). And a very limited [API](http://developers.idealista.com/access-request) that you first have to request for access, and don't always get a response.
 
