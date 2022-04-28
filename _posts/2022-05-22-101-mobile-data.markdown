@@ -5,7 +5,7 @@ lang: en
 ref: 101-Mobile-API
 description: "Cómo descubrir, capturar y emular llamadas API de aplicaciones móviles"
 date:   2022-05-22 11:07:21 +0100
-categories: ["API"]
+categories: ["Scraper"]
 tags: ["Python", "Data"]
 ---
 ## Introducción
