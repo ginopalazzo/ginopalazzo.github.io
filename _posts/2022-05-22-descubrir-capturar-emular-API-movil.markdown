@@ -8,8 +8,8 @@ date:   2022-05-22 11:07:21 +0100
 categories: ["Scraper"]
 tags: ["Python", "Data"]
 ---
-## Introducción
 
+## Introducción
 El objetivo de este post es describir los pasos que he necesitado para descubrir y utilizar la API de una aplicación móvil (cuyo nombre no diré).
 
 He dividido el problema en los siguientes puntos:
@@ -63,7 +63,7 @@ description: "Cómo implementar categorías de color reutilizables Jekyll."
 date:   2017-12-02 11:07:21 +0100
 categories: ["Jekyll", "Visualization"]
 ---
-## Introducción
+## Introducción2
 Como en este pequeño blog, generalmente querrás organizar las entradas ...
 {% endhighlight %}
 
