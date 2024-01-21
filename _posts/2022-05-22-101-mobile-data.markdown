@@ -10,7 +10,7 @@ tags: ["API", "Data"]
 ---
 
 ### Introduction
-The main goal of this post is to describe the steps to discover and use the mobile app API (own or third party).
+The main goal of this post is to describe the steps to discover and use a mobile app API (own or third party).
 
 I divided the problem in the following steps, each of it will be future blog entries: 
 
@@ -25,7 +25,7 @@ I divided the problem in the following steps, each of it will be future blog ent
 2. **API Authentication**: Is OK to know how to make the APIs calls, but they are useless if we don´t know how to emulate them. We need to discover how the app authenticate through the server.
     
     `2.1 Problem ` How do I find the authentication data?\
-    `2.1 Solution` Reverse engineering. Mobile app decompiler.
+    `2.1 Solution` Reverse engineering: Use Mobile app (.apk) decompiler.
     
     `2.2 Problem ` I can't read the code.\
     `2.2 Solution` How to follow the decompiled methods and variables.

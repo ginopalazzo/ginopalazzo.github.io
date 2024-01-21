@@ -25,6 +25,7 @@ permalink: /:categories/:title:output_ext
 twitter_username: ginopalazzo
 github_username:  ginopalazzo
 
+
 # Build settings
 markdown: kramdown
 theme: minima
